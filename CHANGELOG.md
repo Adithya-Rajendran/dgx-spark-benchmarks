@@ -17,7 +17,8 @@ First public version.
 - **Models:**
   - Qwen3.8-27B (vLLM, NVFP4 + MTP)
   - Qwen3.8-Flash-Next (llama.cpp, 3-bit UD-Q3_K_XL)
-  - Ornith-1.5-35B-A3B (vLLM, NVFP4 + MTP), whose parallel runs are still in progress
+  - Ornith-1.5-35B-A3B (vLLM, NVFP4 + MTP): solo, parallel and variance; its SWE-bench Pro run was in
+    progress at release and arrives in the next version
 - **Data:**
   - 18-task fresh-PR set
   - 11-task SWE-bench Pro subset
