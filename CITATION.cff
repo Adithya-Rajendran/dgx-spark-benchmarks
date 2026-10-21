@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this data, please cite it as below, naming the release version you used."
+type: dataset
+title: "DGX Spark benchmarks: open-weight models as autonomous coding agents on 128 GB unified memory"
+version: 0.1.0
+date-released: 2026-10-21
+authors:
+  - family-names: Rajendran
+    given-names: Adithya
+    website: "https://adithya-rajendran.com"
+repository-code: "https://github.com/Adithya-Rajendran/dgx-spark-benchmarks"
+url: "https://github.com/Adithya-Rajendran/dgx-spark-benchmarks"
+license: CC-BY-4.0
+abstract: >-
+  Measured results for open-weight language models running as autonomous coding agents (Claude Code, headless,
+  in network-isolated microVMs) on an NVIDIA GB10 machine with 128 GB unified memory (DGX Spark class).
+  Includes per-attempt outcomes on 18 post-training-cutoff Python bug fixes graded with hidden tests and an
+  11-task SWE-bench Pro subset, plus token, tool-call, time, GPU energy and memory measurements, 1 Hz
+  telemetry, serving-speed and engine-tuning results, and the exact server configurations.
+keywords:
+  - coding agents
+  - LLM evaluation
+  - open-weight models
+  - local inference
+  - DGX Spark
+  - NVIDIA GB10
+  - SWE-bench
+  - energy

@@ -8,6 +8,9 @@ result.
 
 - **[METHOD.md](METHOD.md)**: question, hardware, models, task sets, protocol, metrics, threats to validity
 - **[RESULTS.md](RESULTS.md)**: per-model results, generated from `data/`
+- **[DATA.md](DATA.md)**: data dictionary: every file and field, units, how each is computed, known limits.
+  For analysis start with `data/task_attempts.csv` (one row per agent attempt) and `data/model_summary.csv`
+- **[CHANGELOG.md](CHANGELOG.md)**: dataset versions, corrections and excluded runs
 - **`data/`**: every run's manifest (server image digest, flags, versions), one row per task attempt
   (resolved, tests passed, turns, tokens, tool calls, wall time, GPU energy, minimum free memory), 1 Hz
   telemetry (GPU power, free memory, server cache stats), plus speed, tuning and load profiles
@@ -38,6 +41,23 @@ is GPU-only. See [METHOD.md](METHOD.md#7-threats-to-validity).
 - **[Qwen3.8-Flash-Next](flash-next/)**: which llama.cpp options to use on 128 GB (batch size, MTP draft
   length, mmap vs pinned memory, prompt cache), why memory and not speed is the limit, and 3-bit vs 4-bit.
   This section was previously the separate flash-next-on-dgx-spark repository.
+
+## How to cite
+
+Cite a tagged release so your numbers stay reproducible; `main` keeps changing as models are added. GitHub's
+"Cite this repository" button gives APA and BibTeX from [CITATION.cff](CITATION.cff). For example:
+
+```bibtex
+@misc{rajendran_dgx_spark_benchmarks,
+  author = {Rajendran, Adithya},
+  title  = {{DGX Spark benchmarks: open-weight models as autonomous coding agents on 128 GB unified memory}},
+  year   = {2026},
+  note   = {Dataset, version 0.1.0},
+  url    = {https://github.com/Adithya-Rajendran/dgx-spark-benchmarks}
+}
+```
+
+Corrections and questions: please open an issue. Every correction is recorded in CHANGELOG.md.
 
 ## License
 
