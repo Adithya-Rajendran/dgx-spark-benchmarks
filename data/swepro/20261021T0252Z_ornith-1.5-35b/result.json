@@ -1,23 +1,23 @@
 {
     "id": "b06dae24-9c40-4318-a684-05bc4c9f40d1",
     "started_at": "2026-10-20T19:52:14.291551",
-    "updated_at": "2026-10-21T03:53:01.606264Z",
-    "finished_at": null,
+    "updated_at": "2026-10-20T22:38:32.497155",
+    "finished_at": "2026-10-20T22:38:32.497155",
     "n_total_trials": 11,
     "stats": {
-        "n_completed_trials": 4,
-        "n_errored_trials": 0,
-        "n_running_trials": 1,
-        "n_pending_trials": 6,
+        "n_completed_trials": 11,
+        "n_errored_trials": 2,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
         "n_cancelled_trials": 0,
         "n_retries": 0,
         "evals": {
             "claude-code__ornith-1.5-35b__half_a": {
-                "n_trials": 4,
-                "n_errors": 0,
+                "n_trials": 11,
+                "n_errors": 2,
                 "metrics": [
                     {
-                        "mean": 0.25
+                        "mean": 0.45454545454545453
                     }
                 ],
                 "pass_at_k": {},
@@ -26,19 +26,31 @@
                         "0.0": [
                             "instance_ansible__ansible-deb54e__QM2m9au",
                             "instance_flipt-io__flipt-756f00f__s8dYiCr",
-                            "instance_future-architect__vuls__oLsAKts"
+                            "instance_future-architect__vuls__oLsAKts",
+                            "instance_nodebb__nodebb-04998908__KKZLwvW",
+                            "instance_protonmail__webclients__BS6nqzU",
+                            "instance_tutao__tutanota-09c2776__fN7EY5q"
                         ],
                         "1.0": [
-                            "instance_element-hq__element-web__J8N5jAb"
+                            "instance_element-hq__element-web__J8N5jAb",
+                            "instance_gravitational__teleport__EDaQyT9",
+                            "instance_internetarchive__openli__jCgBfAw",
+                            "instance_navidrome__navidrome-6b__Jp66cWk",
+                            "instance_qutebrowser__qutebrowse__Q6ddhvj"
                         ]
                     }
                 },
-                "exception_stats": {}
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "instance_nodebb__nodebb-04998908__KKZLwvW",
+                        "instance_tutao__tutanota-09c2776__fN7EY5q"
+                    ]
+                }
             }
         },
-        "n_input_tokens": 12847639,
+        "n_input_tokens": 37747784,
         "n_cache_tokens": 0,
-        "n_output_tokens": 211122,
-        "cost_usd": 70.71238500000001
+        "n_output_tokens": 528060,
+        "cost_usd": 206.0773
     }
 }
