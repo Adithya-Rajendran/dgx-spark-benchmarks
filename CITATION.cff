@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this data, please cite it as below, naming the release version you used."
 type: dataset
 title: "DGX Spark benchmarks: open-weight models as autonomous coding agents on 128 GB unified memory"
-version: 0.2.0
+version: 0.3.0
 date-released: 2026-10-21
 doi: 10.5281/zenodo.23524590
 identifiers:

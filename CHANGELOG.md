@@ -15,6 +15,13 @@ Added automatically as runs finish: see the commit history and [RESULTS.md](RESU
   `…gguf-ud-q3_k_xl`, which holds both quantizations. The file actually loaded is UD-IQ4_XS, as the `-m` path in
   `args` and the server log show; `args` is authoritative.
 
+## 0.3.0 (2026-10-21)
+
+DOI: pending (assigned by Zenodo on release).
+
+Added complete results for:
+- **qwen3.8-flash-next-iq4** (llama.cpp, `UD-IQ4_XS`): fresh-PR 13/18, SWE-bench Pro 7/11; runs: solo, variance, swe-bench-pro
+
 ## 0.2.0 (2026-10-21)
 
 DOI: [10.5281/zenodo.23526143](https://doi.org/10.5281/zenodo.23526143).
