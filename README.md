@@ -47,8 +47,9 @@ is GPU-only. See [METHOD.md](METHOD.md#7-threats-to-validity).
 ## How to cite
 
 Cite a versioned release so your numbers stay reproducible; `main` keeps changing as models are added. Each
-release is archived on Zenodo with its own DOI. [10.5281/zenodo.23524590](https://doi.org/10.5281/zenodo.23524590)
-always resolves to the latest; v0.1.0 is [10.5281/zenodo.23524591](https://doi.org/10.5281/zenodo.23524591).
+release is archived on Zenodo with its own DOI ([all versions](CHANGELOG.md)).
+[10.5281/zenodo.23524590](https://doi.org/10.5281/zenodo.23524590) always resolves to the latest; v0.1.0 is
+[10.5281/zenodo.23524591](https://doi.org/10.5281/zenodo.23524591).
 GitHub's "Cite this repository" button gives APA and BibTeX from [CITATION.cff](CITATION.cff). For example:
 
 ```bibtex
