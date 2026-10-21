@@ -9,8 +9,8 @@ result.
 - **[METHOD.md](METHOD.md)**: question, hardware, models, task sets, protocol, metrics, threats to validity
 - **[RESULTS.md](RESULTS.md)**: per-model results, generated from `data/`
 - **`data/`**: every run's manifest (server image digest, flags, versions), one row per task attempt
-  (resolved, tests passed, turns, tokens, tool calls, wall time, GPU energy, minimum free memory), plus
-  speed, tuning and load profiles
+  (resolved, tests passed, turns, tokens, tool calls, wall time, GPU energy, minimum free memory), 1 Hz
+  telemetry (GPU power, free memory, server cache stats), plus speed, tuning and load profiles
 - **`tasks/`**: the 18 fresh-PR tasks (upstream PR links, test counts, gold/base validation) and the
   SWE-bench Pro subset
 - **`config/`**: the model server configurations as run, and the chat-template fix that keeps prefix
@@ -33,12 +33,13 @@ Errored SWE-bench Pro trials (timeouts, context overflow, API errors) count as u
 Small samples: 18 and 11 tasks, mostly one attempt each, so a difference of one or two tasks is noise. Power
 is GPU-only. See [METHOD.md](METHOD.md#7-threats-to-validity).
 
-## Related
+## Deep dives
 
-- [flash-next-on-dgx-spark](https://github.com/Adithya-Rajendran/flash-next-on-dgx-spark): a deep dive into
-  Qwen3.8-Flash-Next's llama.cpp options (3-bit vs 4-bit, MTP, memory) on the same machine.
+- **[Qwen3.8-Flash-Next](flash-next/)**: which llama.cpp options to use on 128 GB (batch size, MTP draft
+  length, mmap vs pinned memory, prompt cache), why memory and not speed is the limit, and 3-bit vs 4-bit.
+  This section was previously the separate flash-next-on-dgx-spark repository.
 
 ## License
 
 Data (`data/`, `tasks/`): CC-BY-4.0, see [data/LICENSE-DATA.txt](data/LICENSE-DATA.txt). Task material
-belongs to the upstream projects under their own licenses. Configs and templates: Apache-2.0.
+belongs to the upstream projects under their own licenses. Configs, templates and scripts: Apache-2.0.
