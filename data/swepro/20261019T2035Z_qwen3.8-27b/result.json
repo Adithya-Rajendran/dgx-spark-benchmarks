@@ -1,0 +1,62 @@
+{
+    "id": "b4495cbc-5ece-4fda-aa9e-965dd6b1d420",
+    "started_at": "2026-10-19T13:35:29.320496",
+    "updated_at": "2026-10-19T21:12:04.763323",
+    "finished_at": "2026-10-19T21:12:04.763323",
+    "n_total_trials": 11,
+    "stats": {
+        "n_completed_trials": 11,
+        "n_errored_trials": 4,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "claude-code__qwen3.8-27b__half_a": {
+                "n_trials": 11,
+                "n_errors": 4,
+                "metrics": [
+                    {
+                        "mean": 0.5454545454545454
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "instance_ansible__ansible-deb54e__387JMr8",
+                            "instance_future-architect__vuls__YDV5Ddj",
+                            "instance_gravitational__teleport__6YNiFuS",
+                            "instance_internetarchive__openli__zUbY4re",
+                            "instance_navidrome__navidrome-6b__KG9qnPv",
+                            "instance_qutebrowser__qutebrowse__XyLQch7"
+                        ],
+                        "0.0": [
+                            "instance_element-hq__element-web__J89w6FH",
+                            "instance_flipt-io__flipt-756f00f__PgvKJXq",
+                            "instance_nodebb__nodebb-04998908__5fharSY",
+                            "instance_protonmail__webclients__eytGuRh",
+                            "instance_tutao__tutanota-09c2776__cZYpGmq"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "UnknownApiError": [
+                        "instance_internetarchive__openli__zUbY4re",
+                        "instance_tutao__tutanota-09c2776__cZYpGmq"
+                    ],
+                    "NonZeroAgentExitCodeError": [
+                        "instance_nodebb__nodebb-04998908__5fharSY"
+                    ],
+                    "AgentTimeoutError": [
+                        "instance_protonmail__webclients__eytGuRh"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 56415459,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 512259,
+        "cost_usd": 260.73462000000006
+    }
+}

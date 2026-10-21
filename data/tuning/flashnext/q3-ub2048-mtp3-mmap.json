@@ -1,0 +1,20 @@
+{
+ "config": "q3-ub2048-mtp3-mmap",
+ "args": "-m /weights/UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00003.gguf -c 131072 -np 1 -b 4096 -ub 2048 --spec-type draft-mtp -md /weights/mtp-Qwen3.8-Flash-Next-Q8_0.gguf -ngld 99 --spec-draft-n-max 3 --load-mode mmap",
+ "common": "--alias m -ngl 99 -fa on --jinja --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-format auto --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0",
+ "headroom_before_gib": 116.62,
+ "load_s": 168.1,
+ "headroom_loaded_gib": 43.74,
+ "decode_tok_s": 23.2,
+ "draft_accept": [
+  505,
+  1554
+ ],
+ "ttft_16k_s": 20.56,
+ "prefill_16k_tok_s": 797,
+ "ttft_64k_s": 73.99,
+ "prefill_64k_tok_s": 886,
+ "ttft_16k_repeat_s": 3.63,
+ "min_headroom_gib": 37.5,
+ "log_tail": "cessing, n_tokens =  57344, progress = 0.85, t =  60.63 s / 945.83 tokens per second\n7.04.305.779 I slot print_timing: id  0 | task 1549 | prompt processing, n_tokens =  61440, progress = 0.91, t =  65.22 s / 942.08 tokens per second\n7.08.935.618 I slot print_timing: id  0 | task 1549 | prompt processing, n_tokens =  65536, progress = 0.97, t =  69.84 s / 938.42 tokens per second\n7.09.191.782 I slot print_timing: id  0 | task 1549 | prompt processing, n_tokens =  65553, progress = 0.97, t =  70.81 s / 925.78 tokens per second\n7.11.488.132 I slot print_timing: id  0 | task 1549 | prompt processing, n_tokens =  67601, progress = 1.00, t =  72.54 s / 931.92 tokens per second\n7.11.737.476 W srv          stop: cancel task, id_task = 1549\n7.11.836.245 I slot      release: id  0 | task 1549 | stop processing: n_tokens = 67653, truncated = 0\n7.11.836.267 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 67653, t_last = 287021953454\n7.13.400.278 I slot launch_slot_: id  0 | task 1570 | processing task, is_child = 0\n7.17.439.637 I slot print_timing: id  0 | task 1570 | prompt processing, n_tokens =   4096, progress = 0.24, t =   3.40 s / 1204.66 tokens per second\n7.21.487.589 I slot print_timing: id  0 | task 1570 | prompt processing, n_tokens =   8192, progress = 0.49, t =   7.42 s / 1103.48 tokens per second\n7.25.646.274 I slot print_timing: id  0 | task 1570 | prompt processing, n_tokens =  12288, progress = 0.73, t =  11.58 s / 1061.57 tokens per second\n7.28.554.571 I slot print_timing: id  0 | task 1570 | prompt processing, n_tokens =  14861, progress = 0.88, t =  14.84 s / 1001.39 tokens per second\n7.30.688.978 I slot print_timing: id  0 | task 1570 | prompt processing, n_tokens =  16909, progress = 1.00, t =  16.73 s / 1010.68 tokens per second\n7.30.922.551 W srv          stop: cancel task, id_task = 1570\n7.30.991.649 I slot print_timing: id  0 | task 1570 | prompt eval time =   17441.44 ms / 16913 tokens (    1.03 ms per token,   969.70 tokens per second)\n7.30.991.655 I slot print_timing: id  0 | task 1570 |        eval time =     149.65 ms /     8 tokens (   21.38 ms per token,    46.77 tokens per second)\n7.30.991.656 I slot print_timing: id  0 | task 1570 |       total time =   17591.10 ms / 16921 tokens\n7.30.991.656 I slot print_timing: id  0 | task 1570 |    graphs reused =       1505\n7.30.991.657 I slot print_timing: id  0 | task 1570 |   graph reallocs =          0    /     0        (same size) / (changed size)\n7.30.991.874 I slot print_timing: id  0 | task 1570 | draft acceptance = 1.00000 (    5 accepted /     5 generated), mean len =  3.50\n7.30.992.361 I slot      release: id  0 | task 1570 | stop processing: n_tokens = 16962, truncated = 0\n7.30.992.386 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.999 (> 0.100 thold), f_keep = 0.999\n7.30.992.458 I slot launch_slot_: id  0 | task 1580 | processing task, is_child = 0\n7.34.550.875 W srv          stop: cancel task, id_task = 1580\n"
+}

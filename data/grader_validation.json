@@ -1,0 +1,128 @@
+{
+ "PyCQA__isort-2647": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "7/7",
+  "gold_p2p": "263/263",
+  "gold_p2p_failing": []
+ },
+ "PyCQA__isort-2651": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "1/1",
+  "gold_p2p": "98/98",
+  "gold_p2p_failing": []
+ },
+ "PyCQA__isort-2653": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "1/1",
+  "gold_p2p": "9/9",
+  "gold_p2p_failing": []
+ },
+ "agronholm__anyio-1330": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "9/9",
+  "gold_p2p": "422/422",
+  "gold_p2p_failing": []
+ },
+ "more-itertools__more-itertools-1276": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "2/2",
+  "gold_p2p": "613/613",
+  "gold_p2p_failing": []
+ },
+ "more-itertools__more-itertools-1278": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "1/1",
+  "gold_p2p": "604/604",
+  "gold_p2p_failing": []
+ },
+ "more-itertools__more-itertools-1285": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "4/4",
+  "gold_p2p": "609/609",
+  "gold_p2p_failing": []
+ },
+ "pallets__werkzeug-3298": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "1/1",
+  "gold_p2p": "16/16",
+  "gold_p2p_failing": []
+ },
+ "pallets__werkzeug-3327": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "3/3",
+  "gold_p2p": "115/115",
+  "gold_p2p_failing": []
+ },
+ "pydantic__pydantic-settings-1038": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "3/3",
+  "gold_p2p": "866/866",
+  "gold_p2p_failing": []
+ },
+ "pydantic__pydantic-settings-1069": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "1/1",
+  "gold_p2p": "415/415",
+  "gold_p2p_failing": []
+ },
+ "pydantic__pydantic-settings-997": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "6/6",
+  "gold_p2p": "290/290",
+  "gold_p2p_failing": []
+ },
+ "pytest-dev__pluggy-738": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "4/4",
+  "gold_p2p": "51/51",
+  "gold_p2p_failing": []
+ },
+ "pytest-dev__pluggy-741": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "2/2",
+  "gold_p2p": "71/71",
+  "gold_p2p_failing": []
+ },
+ "python-poetry__tomlkit-552": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "1/1",
+  "gold_p2p": "196/196",
+  "gold_p2p_failing": []
+ },
+ "python-poetry__tomlkit-610": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "15/15",
+  "gold_p2p": "171/171",
+  "gold_p2p_failing": []
+ },
+ "python-poetry__tomlkit-620": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "2/2",
+  "gold_p2p": "92/92",
+  "gold_p2p_failing": []
+ },
+ "sqlfluff__sqlfluff-8753": {
+  "base_resolved": false,
+  "gold_resolved": true,
+  "gold_f2p": "9/9",
+  "gold_p2p": "2/2",
+  "gold_p2p_failing": []
+ }
+}

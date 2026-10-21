@@ -1,0 +1,8 @@
+{
+ "config": "q3-ub2048-mtp3",
+ "args": "-m /weights/UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00003.gguf -c 131072 -np 1 -b 4096 -ub 2048 --spec-type draft-mtp -md /weights/mtp-Qwen3.8-Flash-Next-Q8_0.gguf -ngld 99 --spec-draft-n-max 3",
+ "common": "--alias m -ngl 99 -fa on --jinja --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-format auto --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0",
+ "headroom_before_gib": 105.64,
+ "error": "headroom fell to 8.86 GiB while loading - aborted",
+ "log_tail": "warn: LLAMA_ARG_HOST environment variable is set, but will be overwritten by command line argument --host\nwarn: LLAMA_ARG_PORT environment variable is set, but will be overwritten by command line argument --port\n0.00.533.266 I srv  llama_server: initializing ...\n0.00.533.280 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)\n0.00.534.420 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)\n0.00.536.463 I srv    load_model: loading model '/weights/UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00003.gguf'\n1.23.821.257 I cmn          init: llama threadpool init, n_threads = 20\n1.46.391.121 I common_speculative_init_result: loading draft model '/weights/mtp-Qwen3.8-Flash-Next-Q8_0.gguf'\n"
+}

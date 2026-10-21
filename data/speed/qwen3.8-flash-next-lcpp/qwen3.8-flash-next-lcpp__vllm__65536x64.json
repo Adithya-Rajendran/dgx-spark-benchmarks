@@ -1,0 +1,67 @@
+{
+  "model": "qwen3.8-flash-next-lcpp",
+  "backend": "vllm",
+  "base_url": "http://127.0.0.1:9131/v1",
+  "scenario": "65536x64",
+  "input_tokens_target": 65536,
+  "max_tokens": 64,
+  "ts_start_unix": 1792476777,
+  "complete": true,
+  "levels": [
+    {
+      "concurrency": 1,
+      "requests": 3,
+      "ok": 3,
+      "errors": 0,
+      "wall_s": 256.195,
+      "agg_output_tok_s": 0.75,
+      "agg_total_tok_s": 828.14,
+      "req_per_s": 0.012,
+      "ttft_s": {
+        "p50": 83.2387,
+        "p90": 83.3258,
+        "p99": 83.3454,
+        "mean": 83.2737,
+        "min": 83.2347,
+        "max": 83.3476
+      },
+      "e2e_s": {
+        "p50": 85.3629,
+        "p90": 85.4484,
+        "p99": 85.4676,
+        "mean": 85.3983,
+        "min": 85.3622,
+        "max": 85.4698
+      },
+      "itl_ms": {
+        "p50": 33.7056,
+        "p90": 33.7659,
+        "p99": 33.7795,
+        "mean": 33.7242,
+        "min": 33.686,
+        "max": 33.781
+      },
+      "out_tokens_mean": 64,
+      "prompt_tokens_mean": 70658,
+      "telemetry": {
+        "n_samples": 475,
+        "gpu_util_pct": {
+          "mean": 95.91,
+          "max": 96.0
+        },
+        "gpu_temp_c": {
+          "max": 86.0
+        },
+        "gpu_power_w": {
+          "mean": 74.67,
+          "max": 80.75
+        },
+        "mem_used_gb": {
+          "mean": 99.58,
+          "max": 99.72
+        }
+      },
+      "first_error": null
+    }
+  ]
+}

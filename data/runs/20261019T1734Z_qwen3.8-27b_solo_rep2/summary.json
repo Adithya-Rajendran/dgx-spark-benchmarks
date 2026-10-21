@@ -1,0 +1,15 @@
+{
+ "run_id": "20261019T1734Z_qwen3.8-27b_solo_rep2",
+ "model": "qwen3.8-27b",
+ "arm": "solo",
+ "tasks": 6,
+ "resolved": 5,
+ "ended_at": "2026-10-19T19:47:24Z",
+ "median_wall_s": 1830.2,
+ "energy_wh": 81.44,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {
+  "wrong_fix": 1
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "run_id": "20261020T0633Z_qwen3.8-flash-next-lcpp_solo",
+ "model": "qwen3.8-flash-next-lcpp",
+ "arm": "solo",
+ "tasks": 18,
+ "resolved": 11,
+ "ended_at": "2026-10-20T10:43:12Z",
+ "median_wall_s": 652.8,
+ "energy_wh": 194.48,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {
+  "broke_existing": 1,
+  "partial_fix": 3,
+  "wrong_fix": 3
+ }
+}

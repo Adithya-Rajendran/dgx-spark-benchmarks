@@ -1,0 +1,57 @@
+{
+    "id": "f459300a-328b-4108-b559-cf3779ae271f",
+    "started_at": "2026-10-20T04:48:34.842327",
+    "updated_at": "2026-10-20T09:28:59.688929",
+    "finished_at": "2026-10-20T09:28:59.688929",
+    "n_total_trials": 11,
+    "stats": {
+        "n_completed_trials": 11,
+        "n_errored_trials": 2,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "claude-code__qwen3.8-flash-next-lcpp__half_a": {
+                "n_trials": 10,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.5454545454545454
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "instance_ansible__ansible-deb54e__s3D7iEd",
+                            "instance_future-architect__vuls__7e3wixD",
+                            "instance_gravitational__teleport__2cigrob",
+                            "instance_navidrome__navidrome-6b__HgwouUR",
+                            "instance_nodebb__nodebb-04998908__bS9G6uT",
+                            "instance_qutebrowser__qutebrowse__X6PNk65"
+                        ],
+                        "0.0": [
+                            "instance_element-hq__element-web__TkTt3gj",
+                            "instance_flipt-io__flipt-756f00f__jocwNwy",
+                            "instance_protonmail__webclients__L3PxvpX",
+                            "instance_tutao__tutanota-09c2776__KqJ9oDP"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NetworkConnectionError": [
+                        "instance_internetarchive__openli__3Ki2eMy"
+                    ],
+                    "AgentTimeoutError": [
+                        "instance_nodebb__nodebb-04998908__bS9G6uT"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 28953461,
+        "n_cache_tokens": 28395306,
+        "n_output_tokens": 347353,
+        "cost_usd": 21.177425
+    }
+}

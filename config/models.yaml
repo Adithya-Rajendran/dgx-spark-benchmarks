@@ -1,0 +1,34 @@
+# Model server configurations as run (images, quantization, flags). Paths are from the private harness.
+models:
+  qwen3.8-27b:
+    tier: <=32GB
+    engine: vllm
+    image: vllm/vllm-openai:nightly-77154ca6116ae34cbfe314beef1016bde9b63989
+    weights: local/qwen3.8-27b-nvfp4
+    port: 9120
+    effort: medium
+    args: --served-model-name qwen3.8-27b --host 127.0.0.1 --port 9120 --max-model-len 131072 --max-num-seqs 16 --gpu-memory-utilization 0.60 --kv-cache-dtype fp8 --enable-prefix-caching --quantization
+      modelopt --speculative-config '{"method":"mtp","num_speculative_tokens":3}' --chat-template /templates/qwen3.8-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser
+      qwen3 --language-model-only
+  ornith-1.5-35b:
+    tier: <=32GB
+    engine: vllm
+    image: nvcr.io/nvidia/vllm:26.09-py3
+    weights: legacy/ornith-1.5-35b
+    port: 9111
+    shm_size: 16g
+    env:
+      VLLM_USE_V2_MODEL_RUNNER: '0'
+    args: --served-model-name ornith-1.5-35b --host 127.0.0.1 --port 9111 --max-model-len 131072 --gpu-memory-utilization 0.60 --kv-cache-memory-bytes 40000000000 --max-num-seqs 32 --quantization modelopt
+      --moe-backend marlin --kv-cache-dtype fp8 --enable-prefix-caching --speculative-config '{"method":"mtp","num_speculative_tokens":1,"moe_backend":"triton"}' --chat-template /templates/ornith-1.5-inline-system.jinja
+      --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only
+  qwen3.8-flash-next-lcpp:
+    tier: 128GB
+    engine: llama.cpp
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda
+    weights: local/qwen3.8-flash-next-gguf-ud-q3_k_xl
+    port: 9131
+    sbx_memory: 4g
+    effort: medium
+    args: -m /weights/model/UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00003.gguf --alias qwen3.8-flash-next-lcpp -c 131072 -np 1 -b 4096 -ub 1024 -ngl 99 -fa on --jinja --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja
+      --reasoning-format auto --cache-ram 0 --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0

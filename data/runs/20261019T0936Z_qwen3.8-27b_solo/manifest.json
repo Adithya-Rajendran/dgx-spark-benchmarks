@@ -1,0 +1,69 @@
+{
+ "run_id": "20261019T0936Z_qwen3.8-27b_solo",
+ "model": "qwen3.8-27b",
+ "arm": "solo",
+ "tag": "",
+ "started_at": "2026-10-19T09:36:12Z",
+ "model_config": {
+  "tier": "<=32GB",
+  "engine": "vllm",
+  "image": "vllm/vllm-openai:nightly-77154ca6116ae34cbfe314beef1016bde9b63989",
+  "weights": "local/qwen3.8-27b-nvfp4",
+  "port": 9120,
+  "effort": "medium",
+  "args": "--served-model-name qwen3.8-27b --host 127.0.0.1 --port 9120 --max-model-len 131072 --max-num-seqs 16 --gpu-memory-utilization 0.60 --kv-cache-dtype fp8 --enable-prefix-caching --quantization modelopt --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --chat-template /templates/qwen3.8-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only"
+ },
+ "server_profile": {
+  "model": "qwen3.8-27b",
+  "engine": "vllm",
+  "tier": "<=32GB",
+  "image": "vllm/vllm-openai:nightly-77154ca6116ae34cbfe314beef1016bde9b63989",
+  "image_id": "sha256:bc7762f87a5ed857f4793af3ac2a7d3fd0eb76a128365bdd78905325591cca68",
+  "args": "--served-model-name qwen3.8-27b --host 127.0.0.1 --port 9120 --max-model-len 131072 --max-num-seqs 16 --gpu-memory-utilization 0.60 --kv-cache-dtype fp8 --enable-prefix-caching --quantization modelopt --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --chat-template /templates/qwen3.8-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only",
+  "weights_gb": 21.9,
+  "load_s": 316.2,
+  "headroom_before_gib": 115.71,
+  "headroom_loaded_gib": 35.58,
+  "kv_cache_gib": "45.77",
+  "kv_cache_tokens": "1,191,809",
+  "max_concurrency": "131,072 tokens per request: 9.09x",
+  "model_load_gib": "19.75",
+  "started_at": "2026-10-19T09:26:40Z"
+ },
+ "config": {
+  "tasks": [
+   "PyCQA__isort-2647",
+   "PyCQA__isort-2651",
+   "PyCQA__isort-2653",
+   "agronholm__anyio-1330",
+   "more-itertools__more-itertools-1276",
+   "more-itertools__more-itertools-1278",
+   "more-itertools__more-itertools-1285",
+   "pallets__werkzeug-3298",
+   "pallets__werkzeug-3327",
+   "pydantic__pydantic-settings-1038",
+   "pydantic__pydantic-settings-1069",
+   "pydantic__pydantic-settings-997",
+   "pytest-dev__pluggy-738",
+   "pytest-dev__pluggy-741",
+   "python-poetry__tomlkit-552",
+   "python-poetry__tomlkit-610",
+   "python-poetry__tomlkit-620",
+   "sqlfluff__sqlfluff-8753"
+  ],
+  "parallel": 1,
+  "timeout_min": 45,
+  "max_turns": 100,
+  "attempt": 1,
+  "guide": null
+ },
+ "versions": {
+  "sbx": "sbx version v0.48.0 5caf923e0587d376848f6f388eca3e0f5ca00e2d",
+  "claude_host": "2.1.302 (Claude Code)",
+  "host": "gx10",
+  "kernel": "7.0.0-1019-nvidia",
+  "repo_commit": "HEAD",
+  "grader_image": "sha256:d8f1067384e385a28e9282e3d22afd9a4e330ed559c6deb5d974efb2adf304c1"
+ },
+ "planner_model": "claude-opus-5-5"
+}

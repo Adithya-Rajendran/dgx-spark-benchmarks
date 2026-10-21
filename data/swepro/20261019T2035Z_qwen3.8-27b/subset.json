@@ -1,0 +1,108 @@
+{
+ "seed": 42,
+ "rule": "2 random tasks per repository (sorted repos, random.Random(42).sample)",
+ "tasks": [
+  {
+   "task": "instance_ansible__ansible-deb54e4c5b32a346f1f0b0a14f1c713d2cc2e961-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+   "image_tag": "ansible.ansible-ansible__ansible-deb54e4c5b32a346f1f0b0a14f1c713d2cc2e961-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5"
+  },
+  {
+   "task": "instance_ansible__ansible-34db57a47f875d11c4068567b9ec7ace174ec4cf-v1055803c3a812189a1133297f7f5468579283f86",
+   "image_tag": "ansible.ansible-ansible__ansible-34db57a47f875d11c4068567b9ec7ace174ec4cf-v1055803c3a812189a1133297f7f5468579283f86"
+  },
+  {
+   "task": "instance_element-hq__element-web-1216285ed2e82e62f8780b6702aa0f9abdda0b34-vnan",
+   "image_tag": "element-hq.element-element-hq__element-web-1216285ed2e82e62f8780b6702aa0f9abdda0b34"
+  },
+  {
+   "task": "instance_element-hq__element-web-e15ef9f3de36df7f318c083e485f44e1de8aad17",
+   "image_tag": "element-hq.element-element-hq__element-web-e15ef9f3de36df7f318c083e485f44e1de8aad17"
+  },
+  {
+   "task": "instance_flipt-io__flipt-756f00f79ba8abf9fe53f3c6c818123b42eb7355",
+   "image_tag": "flipt-io.flipt-flipt-io__flipt-756f00f79ba8abf9fe53f3c6c818123b42eb7355"
+  },
+  {
+   "task": "instance_flipt-io__flipt-6fd0f9e2587f14ac1fdd1c229f0bcae0468c8daa",
+   "image_tag": "flipt-io.flipt-flipt-io__flipt-6fd0f9e2587f14ac1fdd1c229f0bcae0468c8daa"
+  },
+  {
+   "task": "instance_future-architect__vuls-4a72295de7b91faa59d90a5bee91535bbe76755d",
+   "image_tag": "future-architect.vuls-future-architect__vuls-4a72295de7b91faa59d90a5bee91535bbe76755d"
+  },
+  {
+   "task": "instance_future-architect__vuls-36456cb151894964ba1683ce7da5c35ada789970",
+   "image_tag": "future-architect.vuls-future-architect__vuls-36456cb151894964ba1683ce7da5c35ada789970"
+  },
+  {
+   "task": "instance_gravitational__teleport-288c5519ce0dec9622361a5e5d6cd36aa2d9e348",
+   "image_tag": "gravitational.teleport-gravitational__teleport-288c5519ce0dec9622361a5e5d6cd36aa2d9e348"
+  },
+  {
+   "task": "instance_gravitational__teleport-e6895d8934f6e484341034869901145fbc025e72-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
+   "image_tag": "gravitational.teleport-gravitational__teleport-e6895d8934f6e484341034869901145fbc025e72-vce94f93ad1030e3136852817f2423c1b3ac37bc"
+  },
+  {
+   "task": "instance_internetarchive__openlibrary-1894cb48d6e7fb498295a5d3ed0596f6f603b784-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+   "image_tag": "internetarchive.openlibrary-internetarchive__openlibrary-1894cb48d6e7fb498295a5d3ed0596f6f603b784-v0f5aece3601a5b4419f7ccec1dbda"
+  },
+  {
+   "task": "instance_internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+   "image_tag": "internetarchive.openlibrary-internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b"
+  },
+  {
+   "task": "instance_navidrome__navidrome-6b3b4d83ffcf273b01985709c8bc5df12bbb8286",
+   "image_tag": "navidrome.navidrome-navidrome__navidrome-6b3b4d83ffcf273b01985709c8bc5df12bbb8286"
+  },
+  {
+   "task": "instance_navidrome__navidrome-09ae41a2da66264c60ef307882362d2e2d8d8b89",
+   "image_tag": "navidrome.navidrome-navidrome__navidrome-09ae41a2da66264c60ef307882362d2e2d8d8b89"
+  },
+  {
+   "task": "instance_nodebb__nodebb-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+   "image_tag": "nodebb.nodebb-NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5"
+  },
+  {
+   "task": "instance_nodebb__nodebb-0e07f3c9bace416cbab078a30eae972868c0a8a3-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+   "image_tag": "nodebb.nodebb-NodeBB__NodeBB-0e07f3c9bace416cbab078a30eae972868c0a8a3-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e"
+  },
+  {
+   "task": "instance_protonmail__webclients-6e1873b06df6529a469599aa1d69d3b18f7d9d37",
+   "image_tag": "protonmail.webclients-protonmail__webclients-6e1873b06df6529a469599aa1d69d3b18f7d9d37"
+  },
+  {
+   "task": "instance_protonmail__webclients-708ed4a299711f0fa79a907cc5847cfd39c0fc71",
+   "image_tag": "protonmail.webclients-protonmail__webclients-708ed4a299711f0fa79a907cc5847cfd39c0fc71"
+  },
+  {
+   "task": "instance_qutebrowser__qutebrowser-e64622cd2df5b521342cf4a62e0d4cb8f8c9ae5a-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+   "image_tag": "qutebrowser.qutebrowser-qutebrowser__qutebrowser-e64622cd2df5b521342cf4a62e0d4cb8f8c9ae5a-v363c8a7e5ccdf6968fc7ab84a2053ac780366"
+  },
+  {
+   "task": "instance_qutebrowser__qutebrowser-fec187c2cb53d769c2682b35ca77858a811414a8-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+   "image_tag": "qutebrowser.qutebrowser-qutebrowser__qutebrowser-fec187c2cb53d769c2682b35ca77858a811414a8-v363c8a7e5ccdf6968fc7ab84a2053ac780366"
+  },
+  {
+   "task": "instance_tutao__tutanota-09c2776c0fce3db5c6e18da92b5a45dce9f013aa-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
+   "image_tag": "tutao.tutanota-tutao__tutanota-09c2776c0fce3db5c6e18da92b5a45dce9f013aa-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf"
+  },
+  {
+   "task": "instance_tutao__tutanota-fb32e5f9d9fc152a00144d56dd0af01760a2d4dc-vc4e41fd0029957297843cb9dec4a25c7c756f029",
+   "image_tag": "tutao.tutanota-tutao__tutanota-fb32e5f9d9fc152a00144d56dd0af01760a2d4dc-vc4e41fd0029957297843cb9dec4a25c7c756f029"
+  }
+ ],
+ "half_a": [
+  "instance_ansible__ansible-deb54e4c5b32a346f1f0b0a14f1c713d2cc2e961-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+  "instance_element-hq__element-web-1216285ed2e82e62f8780b6702aa0f9abdda0b34-vnan",
+  "instance_flipt-io__flipt-756f00f79ba8abf9fe53f3c6c818123b42eb7355",
+  "instance_future-architect__vuls-4a72295de7b91faa59d90a5bee91535bbe76755d",
+  "instance_gravitational__teleport-288c5519ce0dec9622361a5e5d6cd36aa2d9e348",
+  "instance_internetarchive__openlibrary-1894cb48d6e7fb498295a5d3ed0596f6f603b784-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+  "instance_navidrome__navidrome-6b3b4d83ffcf273b01985709c8bc5df12bbb8286",
+  "instance_nodebb__nodebb-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+  "instance_protonmail__webclients-6e1873b06df6529a469599aa1d69d3b18f7d9d37",
+  "instance_qutebrowser__qutebrowser-e64622cd2df5b521342cf4a62e0d4cb8f8c9ae5a-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+  "instance_tutao__tutanota-09c2776c0fce3db5c6e18da92b5a45dce9f013aa-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf"
+ ],
+ "half_a_rule": "first sampled task per repository (11 tasks) - the run size used per model (time budget)"
+}

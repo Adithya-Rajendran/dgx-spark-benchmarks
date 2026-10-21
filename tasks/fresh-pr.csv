@@ -1,0 +1,19 @@
+task,repo,pr_url,title,merged_at,fail_to_pass,pass_to_pass
+PyCQA__isort-2647,PyCQA/isort,https://github.com/PyCQA/isort/pull/2647,fix: preserve trailing comments when sorting literals,2026-09-21T15:53:38Z,7,263
+PyCQA__isort-2651,PyCQA/isort,https://github.com/PyCQA/isort/pull/2651,Fix multi_line_output=10 emitting unparsable code around trailing comments,2026-09-21T15:41:43Z,1,98
+PyCQA__isort-2653,PyCQA/isort,https://github.com/PyCQA/isort/pull/2653,fix: treat EOF on stdin as 'quit' in --interactive prompt,2026-09-21T15:27:55Z,1,9
+agronholm__anyio-1330,agronholm/anyio,https://github.com/agronholm/anyio/pull/1330,Fix `CancelScope` swallowing a concurrent native `Task.cancel()` on asyncio,2026-09-26T12:25:22Z,9,422
+more-itertools__more-itertools-1276,more-itertools/more-itertools,https://github.com/more-itertools/more-itertools/pull/1276,Preserve numeric_range values during reverse iteration,2026-09-17T14:28:12Z,2,613
+more-itertools__more-itertools-1278,more-itertools/more-itertools,https://github.com/more-itertools/more-itertools/pull/1278,Reuse input iterators in zip_broadcast,2026-09-14T14:27:49Z,1,604
+more-itertools__more-itertools-1285,more-itertools/more-itertools,https://github.com/more-itertools/more-itertools/pull/1285,Issue 1284: don't let a bucket lookup invent a key,2026-09-17T14:26:17Z,4,609
+pallets__werkzeug-3298,pallets/werkzeug,https://github.com/pallets/werkzeug/pull/3298,don't modify SERVER_NAME or SERVER_PORT,2026-09-25T04:30:12Z,1,16
+pallets__werkzeug-3327,pallets/werkzeug,https://github.com/pallets/werkzeug/pull/3327,deprecate correcting location from iri,2026-10-14T03:54:58Z,3,115
+pydantic__pydantic-settings-1038,pydantic/pydantic-settings,https://github.com/pydantic/pydantic-settings/pull/1038,Fix config file and CLI values being ignored when alias differs from validation_alias,2026-10-14T11:25:44Z,3,866
+pydantic__pydantic-settings-1069,pydantic/pydantic-settings,https://github.com/pydantic/pydantic-settings/pull/1069,Keep fixed-length tuple CLI positionals single-valued,2026-10-16T15:10:04Z,1,415
+pydantic__pydantic-settings-997,pydantic/pydantic-settings,https://github.com/pydantic/pydantic-settings/pull/997,Only skip partial updates for discriminated unions selecting another type,2026-10-09T07:47:05Z,6,290
+pytest-dev__pluggy-738,pytest-dev/pluggy,https://github.com/pytest-dev/pluggy/pull/738,"Change precedence of hook call value, hookspec default, hookimpl default",2026-09-25T07:16:08Z,4,51
+pytest-dev__pluggy-741,pytest-dev/pluggy,https://github.com/pytest-dev/pluggy/pull/741,Validate all hookimpls before registering a plugin,2026-09-25T04:58:39Z,2,71
+python-poetry__tomlkit-552,python-poetry/tomlkit,https://github.com/python-poetry/tomlkit/pull/552,Preserve inline table key order in item() (#546),2026-10-12T10:45:57Z,1,196
+python-poetry__tomlkit-610,python-poetry/tomlkit,https://github.com/python-poetry/tomlkit/pull/610,fix: preserve underscores when creating integers from strings,2026-10-07T12:13:31Z,15,171
+python-poetry__tomlkit-620,python-poetry/tomlkit,https://github.com/python-poetry/tomlkit/pull/620,fix: add the stdlib `fold` argument to Time and DateTime,2026-09-30T00:38:54Z,2,92
+sqlfluff__sqlfluff-8753,sqlfluff/sqlfluff,https://github.com/sqlfluff/sqlfluff/pull/8753,Fix Rust escaping of StringLexer templates,2026-10-15T21:44:25Z,9,2
