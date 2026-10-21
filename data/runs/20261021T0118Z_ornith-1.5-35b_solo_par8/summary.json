@@ -1,0 +1,15 @@
+{
+ "run_id": "20261021T0118Z_ornith-1.5-35b_solo_par8",
+ "model": "ornith-1.5-35b",
+ "arm": "solo",
+ "tasks": 6,
+ "resolved": 5,
+ "ended_at": "2026-10-21T02:02:00Z",
+ "median_wall_s": 956.8,
+ "energy_wh": 79.32,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {
+  "broke_existing": 1
+ }
+}
