@@ -1,0 +1,11 @@
+{
+ "model": "qwen3.8-27b",
+ "variant": "base",
+ "args": "--served-model-name qwen3.8-27b --host 127.0.0.1 --port 9120 --max-model-len 131072 --max-num-seqs 16 --gpu-memory-utilization 0.60 --kv-cache-dtype fp8 --enable-prefix-caching --quantization modelopt --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --chat-template /templates/qwen3.8-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only",
+ "load_s": 341.5,
+ "headroom_loaded_gib": 38.05,
+ "decode_tok_s": 20.9,
+ "tokens": 7100,
+ "mtp_acceptance": 0.458,
+ "ttft_16k_s": 6.34
+}

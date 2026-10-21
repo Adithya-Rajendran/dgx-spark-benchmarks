@@ -1,0 +1,6 @@
+{
+ "model": "qwen3.8-27b",
+ "variant": "lin-b12x",
+ "args": "--served-model-name qwen3.8-27b --host 127.0.0.1 --port 9120 --max-model-len 131072 --max-num-seqs 16 --gpu-memory-utilization 0.60 --kv-cache-dtype fp8 --enable-prefix-caching --quantization modelopt --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --chat-template /templates/qwen3.8-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only --linear-backend b12x",
+ "error": "ne 175, in sync_wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core_client.py\", line 1120, in __init__\n    super().__init__(\n  File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core_client.py\", line 682, in __init__\n    with launch_core_engines(\n  File \"/usr/lib/python3.12/contextlib.py\", line 144, in __exit__\n    next(self.gen)\n  File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/utils.py\", line 1351, in launch_core_engines\n    wait_for_engine_startup(\n  File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/utils.py\", line 1431, in wait_for_engine_startup\n    raise RuntimeError(\nRuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}\n"
+}
