@@ -11,6 +11,10 @@ Cite a tagged release (or its DOI) so your numbers stay reproducible. `main` cha
 
 Added automatically as runs finish: see the commit history and [RESULTS.md](RESULTS.md).
 
+- Note for `qwen3.8-flash-next-iq4`: its manifests' `model_config.weights` label names the folder
+  `…gguf-ud-q3_k_xl`, which holds both quantizations. The file actually loaded is UD-IQ4_XS, as the `-m` path in
+  `args` and the server log show; `args` is authoritative.
+
 ## 0.2.0 (2026-10-21)
 
 DOI: [10.5281/zenodo.23526143](https://doi.org/10.5281/zenodo.23526143).

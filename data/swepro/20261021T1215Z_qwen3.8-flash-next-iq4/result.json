@@ -1,0 +1,51 @@
+{
+    "id": "1b9e4f87-ca23-45ba-836b-b032765c7e60",
+    "started_at": "2026-10-21T05:15:03.584132",
+    "updated_at": "2026-10-21T09:41:15.906693",
+    "finished_at": "2026-10-21T09:41:15.906693",
+    "n_total_trials": 11,
+    "stats": {
+        "n_completed_trials": 11,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "claude-code__qwen3.8-flash-next-iq4__half_a": {
+                "n_trials": 11,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.6363636363636364
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "instance_ansible__ansible-deb54e__58SyHe2",
+                            "instance_future-architect__vuls__ouNPRph",
+                            "instance_gravitational__teleport__vwNgWgA",
+                            "instance_internetarchive__openli__6P82tLs",
+                            "instance_navidrome__navidrome-6b__FHxJZT3",
+                            "instance_nodebb__nodebb-04998908__ufVzBEe",
+                            "instance_qutebrowser__qutebrowse__yRYBmJ8"
+                        ],
+                        "0.0": [
+                            "instance_element-hq__element-web__ycVBJLr",
+                            "instance_flipt-io__flipt-756f00f__zxhb69h",
+                            "instance_protonmail__webclients__aQFWJCu",
+                            "instance_tutao__tutanota-09c2776__xXfKqMk"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 26024342,
+        "n_cache_tokens": 25412443,
+        "n_output_tokens": 364682,
+        "cost_usd": 26.14351
+    }
+}
