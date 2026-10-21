@@ -11,6 +11,14 @@ Cite a tagged release (or its DOI) so your numbers stay reproducible. `main` cha
 
 Added automatically as runs finish: see the commit history and [RESULTS.md](RESULTS.md).
 
+## 0.2.0 (2026-10-21)
+
+DOI: pending (assigned by Zenodo on release).
+
+Added complete results (solo, parallel, variance, SWE-bench Pro) for:
+- **ornith-1.5-35b** (vllm, `ornith-1.5-35b`): fresh-PR 10/18, SWE-bench Pro 5/11 (2 errored)
+  - Notes: 3 recovered row(s), 0 harness error(s); see the per-run data.
+
 ## 0.1.0 (2026-10-21)
 
 First public version. DOI: [10.5281/zenodo.23524591](https://doi.org/10.5281/zenodo.23524591).
