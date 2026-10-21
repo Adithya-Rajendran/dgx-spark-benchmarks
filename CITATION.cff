@@ -12,6 +12,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.23524591
     description: "Version 0.1.0"
+  - type: doi
+    value: 10.5281/zenodo.23526143
+    description: "Version 0.2.0"
 authors:
   - family-names: Rajendran
     given-names: Adithya

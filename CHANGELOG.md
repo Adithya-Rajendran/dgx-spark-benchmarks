@@ -13,7 +13,7 @@ Added automatically as runs finish: see the commit history and [RESULTS.md](RESU
 
 ## 0.2.0 (2026-10-21)
 
-DOI: pending (assigned by Zenodo on release).
+DOI: [10.5281/zenodo.23526143](https://doi.org/10.5281/zenodo.23526143).
 
 Added complete results (solo, parallel, variance, SWE-bench Pro) for:
 - **ornith-1.5-35b** (vllm, `ornith-1.5-35b`): fresh-PR 10/18, SWE-bench Pro 5/11 (2 errored)
