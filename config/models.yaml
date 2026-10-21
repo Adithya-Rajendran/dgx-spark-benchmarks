@@ -22,6 +22,20 @@ models:
     args: --served-model-name ornith-1.5-35b --host 127.0.0.1 --port 9111 --max-model-len 131072 --gpu-memory-utilization 0.60 --kv-cache-memory-bytes 40000000000 --max-num-seqs 32 --quantization modelopt
       --moe-backend marlin --kv-cache-dtype fp8 --enable-prefix-caching --speculative-config '{"method":"mtp","num_speculative_tokens":1,"moe_backend":"triton"}' --chat-template /templates/ornith-1.5-inline-system.jinja
       --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only
+  nemotron-3.5-bolt:
+    tier: 128GB
+    engine: vllm
+    image: self-hosted-ai/vllm-bolt:local
+    weights: legacy/nemotron-3.5-bolt
+    extra_mounts:
+    - legacy/nemotron-3.5-bolt-lilicorr:/weights/nemotron-3.5-bolt-lilicorr
+    port: 9110
+    env:
+      VLLM_USE_V2_MODEL_RUNNER: '1'
+    args: --served-model-name nemotron-3.5-bolt --host 127.0.0.1 --port 9110 --trust-remote-code --max-model-len 131072 --max-num-seqs 8 --enable-chunked-prefill --compilation-config '{"cudagraph_mode":"PIECEWISE"}'
+      --gpu-memory-utilization 0.55 --kv-cache-memory-bytes 20000000000 --kv-cache-dtype fp8 --linear-backend b12x --moe-backend b12x --attention-backend FLASHINFER --mamba-backend flashinfer --mamba-ssm-cache-dtype
+      bfloat16 --mamba-cache-dtype bfloat16 --mamba-cache-mode align --seed 42 --limit-mm-per-prompt '{"video":0,"image":0}' --enable-auto-tool-choice --tool-call-parser qwen3_coder --reasoning-parser-plugin
+      /opt/bolt/ultra_v3_reasoning_parser.py --reasoning-parser ultra_v3 --speculative-config '{"method":"dflash","model":"/weights/nemotron-3.5-bolt-lilicorr","num_speculative_tokens":7,"rejection_sample_method":"standard","attention_backend":"FLASHINFER","draft_load_config":{"load_format":"auto"}}'
   qwen3.8-flash-next-lcpp:
     tier: 128GB
     engine: llama.cpp

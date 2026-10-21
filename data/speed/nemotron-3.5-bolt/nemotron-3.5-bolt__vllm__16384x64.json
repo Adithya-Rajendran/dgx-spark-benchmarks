@@ -1,0 +1,67 @@
+{
+  "model": "nemotron-3.5-bolt",
+  "backend": "vllm",
+  "base_url": "http://127.0.0.1:9110/v1",
+  "scenario": "16384x64",
+  "input_tokens_target": 16384,
+  "max_tokens": 64,
+  "ts_start_unix": 1792601642,
+  "complete": true,
+  "levels": [
+    {
+      "concurrency": 1,
+      "requests": 4,
+      "ok": 4,
+      "errors": 0,
+      "wall_s": 40.72,
+      "agg_output_tok_s": 6.29,
+      "agg_total_tok_s": 1743.0,
+      "req_per_s": 0.098,
+      "ttft_s": {
+        "p50": 9.455,
+        "p90": 9.479,
+        "p99": 9.4829,
+        "mean": 9.4573,
+        "min": 9.4357,
+        "max": 9.4834
+      },
+      "e2e_s": {
+        "p50": 10.183,
+        "p90": 10.2317,
+        "p99": 10.2485,
+        "mean": 10.1799,
+        "min": 10.1034,
+        "max": 10.2503
+      },
+      "itl_ms": {
+        "p50": 11.4835,
+        "p90": 12.5761,
+        "p99": 12.8184,
+        "mean": 11.4706,
+        "min": 10.07,
+        "max": 12.8453
+      },
+      "out_tokens_mean": 64,
+      "prompt_tokens_mean": 17679.8,
+      "telemetry": {
+        "n_samples": 76,
+        "gpu_util_pct": {
+          "mean": 95.67,
+          "max": 96.0
+        },
+        "gpu_temp_c": {
+          "max": 81.0
+        },
+        "gpu_power_w": {
+          "mean": 91.15,
+          "max": 95.88
+        },
+        "mem_used_gb": {
+          "mean": 55.03,
+          "max": 55.08
+        }
+      },
+      "first_error": null
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 model,engine,fresh_pr_resolved,fresh_pr_graded,fresh_pr_harness_errors,median_min_per_task,gpu_wh_18_tasks,swepro_resolved,swepro_tasks,swepro_errored,swepro_run,decode_tok_s,request_16k_s,request_64k_s
+nemotron-3.5-bolt,vllm,1,3,0,11.0,66.1,,,,,60.69,10.18,41.84
 ornith-1.5-35b,vllm,10,18,0,10.3,160.2,5,11,2,20261021T0252Z_ornith-1.5-35b,91.11,4.51,21.72
 qwen3.8-27b,vllm,12,18,0,18.7,251.5,6,11,4,20261019T2035Z_qwen3.8-27b,23.83,9.38,45.87
 qwen3.8-flash-next-iq4,llama.cpp,13,18,0,8.7,139.9,7,11,0,20261021T1215Z_qwen3.8-flash-next-iq4,32.92,22.96,92.91

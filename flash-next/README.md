@@ -6,8 +6,9 @@ memory, ~273 GB/s; the same class of machine as the DGX Spark and the RTX Spark 
 tests on real bug fixes the model cannot have seen. Part of [dgx-spark-benchmarks](../README.md); the
 shared method is in [METHOD.md](../METHOD.md).
 
-The open question this repo is meant to answer: **is the 4th bit worth it for long agent sessions?**
-3-bit results are in; the 4-bit run is in progress (see [Status](#status)).
+The question this section answers: **is the 4th bit worth it for long agent sessions?** Yes. Keeping the
+model's n-gram table memory-mapped from SSD made room for the 4-bit build. It then resolved more tasks, ran
+faster per task, used less energy and left 2.5× more free memory than the 3-bit build (see [Results](#results)).
 
 ## Setup
 
@@ -25,19 +26,24 @@ The open question this repo is meant to answer: **is the 4th bit worth it for lo
 - **Limits:** 45 min / 100 turns per task; reasoning effort `medium`; 131k context with Claude Code told the
   real window (`CLAUDE_CODE_AUTO_COMPACT_WINDOW`) so it compacts instead of overflowing.
 
-## Results so far (3-bit, UD-Q3_K_XL)
+## Results
 
-| | Qwen3.8-Flash-Next 3-bit | Qwen3.8-27B (dense, NVFP4 + MTP, vLLM) for reference |
-|---|---|---|
-| Fresh bug fixes resolved (18) | **11** | 12 |
-| Same 6-task slice re-run | 5/6 | 5/6 |
-| SWE-bench Pro subset | 6 of 10 graded (1 harness error) | 6 of 11 |
-| Median wall-clock per task | **10.6 min** | 18.7 min |
-| All 18 tasks | **4.1 h** | 6.8 h |
-| GPU energy, all 18 tasks | **194 Wh** | 252 Wh |
-| Single-stream decode (fixed-length test) | 31 tok/s | 24 tok/s |
+| | Flash-Next 3-bit (UD-Q3_K_XL) | **Flash-Next 4-bit (UD-IQ4_XS)** | Qwen3.8-27B (dense, NVFP4 + MTP, vLLM) for reference |
+|---|---|---|---|
+| Fresh bug fixes resolved (18) | 11 | **13** | 12 |
+| Same 6-task slice re-run | 5/6 | **6/6** | 5/6 |
+| SWE-bench Pro subset (11) | 6 (2 errored) | **7** | 6 (4 errored) |
+| Median wall-clock per task | 10.6 min | **8.7 min** | 18.7 min |
+| All 18 tasks | 4.2 h | **3.2 h** | 6.8 h |
+| GPU energy, all 18 tasks | 194 Wh | **140 Wh** | 252 Wh |
+| Single-stream decode (fixed-length test) | 31 tok/s (no MTP) | **33 tok/s** (MTP 2) | 24 tok/s |
+| Lowest free memory during agent work | 15.6 GiB | **39.6 GiB** | 33.4 GiB |
+| Server options | n-gram table in GPU memory, no MTP | table memory-mapped from SSD, MTP draft 2 | – |
 
-Both solved the same 10 tasks; one task apart is noise at n=18. Per-task rows, transcripts-level metrics and
+The 4-bit build solved three tasks the 3-bit missed (werkzeug-3298, pydantic-settings-1038, tomlkit-610) and
+missed one the 3-bit solved (pydantic-settings-1069). At n=18 with sampling at temperature 1.0, ±1–2 tasks is
+within run-to-run noise, but every measure moved in the same direction. MTP and placing the table on SSD change
+speed, not the model's outputs, so the quality difference comes from the quantization. Per-task rows, transcripts-level metrics and
 1 Hz telemetry (GPU power, memory headroom) are in [`data/runs/`](../data/runs) (the
 `qwen3.8-flash-next-lcpp` runs); all models side by side: [RESULTS.md](../RESULTS.md).
 
@@ -58,6 +64,10 @@ loaded (GB10: `MemAvailable - KReclaimable + SReclaimable`). Raw: [`data/tuning/
 | ubatch 2048, MTP 2, mmap+mlock | 32.5 | 20.5 s | 74 s | 3.6 s | 15.5 GiB |
 | ubatch 2048, MTP 3 | – | – | – | – | aborted: fell to 8.9 GiB while loading |
 | IQ4_XS, ubatch 2048, MTP 2, mmap+mlock | – | – | – | – | aborted: fell to 8.8 GiB while loading |
+| n-gram table on SSD, no MTP | 24.0 | 21.0 s | 77 s | 2.5 s | 54.3 GiB |
+| n-gram table on SSD, MTP 2 | 31.1 | 21.6 s | 81 s | 2.6 s | 50.3 GiB |
+| IQ4_XS, n-gram table on SSD, no MTP | 24.2 | 21.4 s | 78 s | 2.5 s | 51.6 GiB |
+| **IQ4_XS, n-gram table on SSD, MTP 2** (used for the 4-bit run) | 27.1 | 22.7 s | 83 s | 2.7 s | 45.3 GiB |
 
 Findings:
 - **MTP draft length 2** is the sweet spot (~44% draft acceptance on this test); 3-4 drafts get rejected more
@@ -70,17 +80,23 @@ Findings:
   disabled (`--cache-ram 0`).
 - **Memory, not speed, is the wall on 128 GB.** With MTP and a single 4 GB agent sandbox, free memory fell to
   ~6 GiB; the production 3-bit run therefore uses no MTP (~32 tok/s instead of ~37) and bottoms out around
-  15.6 GiB free during agent work. **The 4-bit build (IQ4_XS, 94 GB) does not fit** this way at all.
+  15.6 GiB free during agent work. The 4-bit build (IQ4_XS, 94 GB) does not fit this way at all.
+- **Keeping the n-gram table on SSD fixes that.** The table (`per_layer_token_embd`, 26.8 GiB in the 3-bit file)
+  is read only a few rows per token, so it can be memory-mapped from NVMe instead of held in GPU memory
+  (`-ot per_layer_token_embd\.weight=CPU --load-mode mmap`, the idea came from a comment by Strata). At
+  3-bit with MTP 2, free memory after loading rose from 16.6–16.8 GiB to 50.3 GiB. Prefill was unchanged, and
+  decode dropped from 34–37 to 31 tok/s because the table's rows are now read from SSD. That was enough for the
+  4-bit build with MTP and a ~40 GiB margin while an agent works. Unlike the plain mmap row above, this is real free memory: only the
+  rarely-read table is file-backed, and the minimum stayed near 40 GiB through 3 hours of agent runs.
 - The GB10 exposes ~122 GB to Linux. Machines that cap GPU memory lower (Windows defaults on some 128 GB boxes)
   would not fit the 3-bit build plus an agent either.
 
 ## Status
 
-- [x] 3-bit: tuning, 18-task run, variance re-run, SWE-bench Pro subset
-- [ ] **4-bit (IQ4_XS) via Strata's trick**: in the GGUF, the n-gram table (`per_layer_token_embd`) is
-      **26.8 GiB** and is read a few rows per token. Keeping it on the CPU side, memory-mapped from SSD
-      (`-ot per_layer_token_embd\.weight=CPU --load-mode mmap`), should leave ~45 GiB free with the 4-bit
-      build. Next: measure it; if it holds memory and speed, run the same 18 tasks + SWE-bench Pro at 4-bit.
+- [x] 3-bit: tuning, 18-task run, variance re-run, SWE-bench Pro subset (dataset v0.1.0)
+- [x] 4-bit with the n-gram table on SSD: tuning, 18-task run, variance re-run, SWE-bench Pro subset
+      (dataset v0.3.0, [10.5281/zenodo.23539595](https://doi.org/10.5281/zenodo.23539595))
+- [ ] Parallel agents at 4-bit (not run yet; the ~40 GiB margin suggests 2–4 agents fit)
 
 ## Reproduce
 

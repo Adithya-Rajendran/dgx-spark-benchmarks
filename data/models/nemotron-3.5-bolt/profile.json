@@ -1,0 +1,17 @@
+{
+ "model": "nemotron-3.5-bolt",
+ "engine": "vllm",
+ "tier": "128GB",
+ "image": "self-hosted-ai/vllm-bolt:local",
+ "image_id": "sha256:771388c040989826d4a8483a82dbfa5a0c0a9d57f59ff1964f1cbd8af1ecc6c1",
+ "args": "--served-model-name nemotron-3.5-bolt --host 127.0.0.1 --port 9110 --trust-remote-code --max-model-len 131072 --max-num-seqs 8 --enable-chunked-prefill --compilation-config '{\"cudagraph_mode\":\"PIECEWISE\"}' --gpu-memory-utilization 0.55 --kv-cache-memory-bytes 20000000000 --kv-cache-dtype fp8 --linear-backend b12x --moe-backend b12x --attention-backend FLASHINFER --mamba-backend flashinfer --mamba-ssm-cache-dtype bfloat16 --mamba-cache-dtype bfloat16 --mamba-cache-mode align --seed 42 --limit-mm-per-prompt '{\"video\":0,\"image\":0}' --enable-auto-tool-choice --tool-call-parser qwen3_coder --reasoning-parser-plugin /opt/bolt/ultra_v3_reasoning_parser.py --reasoning-parser ultra_v3 --speculative-config '{\"method\":\"dflash\",\"model\":\"/weights/nemotron-3.5-bolt-lilicorr\",\"num_speculative_tokens\":7,\"rejection_sample_method\":\"standard\",\"attention_backend\":\"FLASHINFER\",\"draft_load_config\":{\"load_format\":\"auto\"}}'",
+ "weights_gb": 24.1,
+ "load_s": 446.4,
+ "headroom_before_gib": 117.72,
+ "headroom_loaded_gib": 66.63,
+ "kv_cache_gib": null,
+ "kv_cache_tokens": "1,030,190",
+ "max_concurrency": "131,072 tokens per request: 7.86x",
+ "model_load_gib": "24.09",
+ "started_at": "2026-10-21T16:45:11Z"
+}
