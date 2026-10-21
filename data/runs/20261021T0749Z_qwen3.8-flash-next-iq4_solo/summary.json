@@ -1,0 +1,17 @@
+{
+ "run_id": "20261021T0749Z_qwen3.8-flash-next-iq4_solo",
+ "model": "qwen3.8-flash-next-iq4",
+ "arm": "solo",
+ "tasks": 18,
+ "resolved": 13,
+ "ended_at": "2026-10-21T11:02:08Z",
+ "median_wall_s": 563.9,
+ "energy_wh": 139.85,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {
+  "broke_existing": 2,
+  "partial_fix": 1,
+  "wrong_fix": 2
+ }
+}

@@ -32,3 +32,14 @@ models:
     effort: medium
     args: -m /weights/model/UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00003.gguf --alias qwen3.8-flash-next-lcpp -c 131072 -np 1 -b 4096 -ub 1024 -ngl 99 -fa on --jinja --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja
       --reasoning-format auto --cache-ram 0 --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0
+  qwen3.8-flash-next-iq4:
+    tier: 128GB
+    engine: llama.cpp
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda
+    weights: local/qwen3.8-flash-next-gguf-ud-q3_k_xl
+    port: 9132
+    sbx_memory: 4g
+    effort: medium
+    args: -m /weights/model/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf -c 131072 -np 1 -b 4096 -ub 1024 --spec-type draft-mtp -md /weights/model/mtp-Qwen3.8-Flash-Next-Q8_0.gguf -ngld 99
+      --spec-draft-n-max 2 --load-mode mmap -ot per_layer_token_embd\.weight=CPU --alias qwen3.8-flash-next-iq4 -ngl 99 -fa on --jinja --cache-ram 0 --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja
+      --reasoning-format auto --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0

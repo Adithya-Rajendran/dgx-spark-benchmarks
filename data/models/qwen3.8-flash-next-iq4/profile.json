@@ -1,0 +1,17 @@
+{
+ "model": "qwen3.8-flash-next-iq4",
+ "engine": "llama.cpp",
+ "tier": "128GB",
+ "image": "ghcr.io/ggml-org/llama.cpp:server-cuda",
+ "image_id": "sha256:801010e1816fce3be4f30a8c29ec2760b8651e1dc767ed99b5c5d5b104e78caf",
+ "args": "-m /weights/model/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf -c 131072 -np 1 -b 4096 -ub 1024 --spec-type draft-mtp -md /weights/model/mtp-Qwen3.8-Flash-Next-Q8_0.gguf -ngld 99 --spec-draft-n-max 2 --load-mode mmap -ot per_layer_token_embd\\.weight=CPU --alias qwen3.8-flash-next-iq4 -ngl 99 -fa on --jinja --cache-ram 0 --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-format auto --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0",
+ "weights_gb": 187.8,
+ "load_s": 177.1,
+ "headroom_before_gib": 118.3,
+ "headroom_loaded_gib": 46.61,
+ "kv_cache_gib": null,
+ "kv_cache_tokens": null,
+ "max_concurrency": null,
+ "model_load_gib": null,
+ "started_at": "2026-10-21T07:21:17Z"
+}

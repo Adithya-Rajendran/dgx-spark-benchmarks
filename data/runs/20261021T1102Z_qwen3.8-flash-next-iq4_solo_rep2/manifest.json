@@ -1,0 +1,58 @@
+{
+ "run_id": "20261021T1102Z_qwen3.8-flash-next-iq4_solo_rep2",
+ "model": "qwen3.8-flash-next-iq4",
+ "arm": "solo",
+ "tag": "rep2",
+ "started_at": "2026-10-21T11:02:08Z",
+ "model_config": {
+  "tier": "128GB",
+  "engine": "llama.cpp",
+  "image": "ghcr.io/ggml-org/llama.cpp:server-cuda",
+  "weights": "local/qwen3.8-flash-next-gguf-ud-q3_k_xl",
+  "port": 9132,
+  "sbx_memory": "4g",
+  "effort": "medium",
+  "args": "-m /weights/model/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf -c 131072 -np 1 -b 4096 -ub 1024 --spec-type draft-mtp -md /weights/model/mtp-Qwen3.8-Flash-Next-Q8_0.gguf -ngld 99 --spec-draft-n-max 2 --load-mode mmap -ot per_layer_token_embd\\.weight=CPU --alias qwen3.8-flash-next-iq4 -ngl 99 -fa on --jinja --cache-ram 0 --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-format auto --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0"
+ },
+ "server_profile": {
+  "model": "qwen3.8-flash-next-iq4",
+  "engine": "llama.cpp",
+  "tier": "128GB",
+  "image": "ghcr.io/ggml-org/llama.cpp:server-cuda",
+  "image_id": "sha256:801010e1816fce3be4f30a8c29ec2760b8651e1dc767ed99b5c5d5b104e78caf",
+  "args": "-m /weights/model/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf -c 131072 -np 1 -b 4096 -ub 1024 --spec-type draft-mtp -md /weights/model/mtp-Qwen3.8-Flash-Next-Q8_0.gguf -ngld 99 --spec-draft-n-max 2 --load-mode mmap -ot per_layer_token_embd\\.weight=CPU --alias qwen3.8-flash-next-iq4 -ngl 99 -fa on --jinja --cache-ram 0 --chat-template-file /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-format auto --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0",
+  "weights_gb": 187.8,
+  "load_s": 177.1,
+  "headroom_before_gib": 118.3,
+  "headroom_loaded_gib": 46.61,
+  "kv_cache_gib": null,
+  "kv_cache_tokens": null,
+  "max_concurrency": null,
+  "model_load_gib": null,
+  "started_at": "2026-10-21T07:21:17Z"
+ },
+ "config": {
+  "tasks": [
+   "more-itertools__more-itertools-1276",
+   "more-itertools__more-itertools-1278",
+   "PyCQA__isort-2651",
+   "pallets__werkzeug-3327",
+   "pytest-dev__pluggy-741",
+   "python-poetry__tomlkit-620"
+  ],
+  "parallel": 1,
+  "timeout_min": 45,
+  "max_turns": 100,
+  "attempt": 2,
+  "guide": null
+ },
+ "versions": {
+  "sbx": "sbx version v0.48.0 5caf923e0587d376848f6f388eca3e0f5ca00e2d",
+  "claude_host": "2.1.305 (Claude Code)",
+  "host": "gx10",
+  "kernel": "7.0.0-1019-nvidia",
+  "repo_commit": "cbf6014153fe93e85459d029d6261ef87e0c91eb",
+  "grader_image": "sha256:d8f1067384e385a28e9282e3d22afd9a4e330ed559c6deb5d974efb2adf304c1"
+ },
+ "planner_model": "claude-opus-5-5"
+}
