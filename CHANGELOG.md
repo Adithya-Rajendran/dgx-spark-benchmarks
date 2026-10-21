@@ -17,7 +17,7 @@ Added automatically as runs finish: see the commit history and [RESULTS.md](RESU
 
 ## 0.3.0 (2026-10-21)
 
-DOI: pending (assigned by Zenodo on release).
+DOI: [10.5281/zenodo.23539595](https://doi.org/10.5281/zenodo.23539595).
 
 Added complete results for:
 - **qwen3.8-flash-next-iq4** (llama.cpp, `UD-IQ4_XS`): fresh-PR 13/18, SWE-bench Pro 7/11; runs: solo, variance, swe-bench-pro

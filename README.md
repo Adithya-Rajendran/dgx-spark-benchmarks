@@ -49,8 +49,8 @@ is GPU-only. See [METHOD.md](METHOD.md#7-threats-to-validity).
 
 Cite a versioned release so your numbers stay reproducible; `main` keeps changing as models are added. Each
 release is archived on Zenodo with its own DOI ([all versions](CHANGELOG.md)).
-[10.5281/zenodo.23524590](https://doi.org/10.5281/zenodo.23524590) always resolves to the latest; v0.2.0 is
-[10.5281/zenodo.23526143](https://doi.org/10.5281/zenodo.23526143).
+[10.5281/zenodo.23524590](https://doi.org/10.5281/zenodo.23524590) always resolves to the latest; v0.3.0 is
+[10.5281/zenodo.23539595](https://doi.org/10.5281/zenodo.23539595).
 GitHub's "Cite this repository" button gives APA and BibTeX from [CITATION.cff](CITATION.cff). For example:
 
 ```bibtex
@@ -58,10 +58,10 @@ GitHub's "Cite this repository" button gives APA and BibTeX from [CITATION.cff](
   author = {Rajendran, Adithya},
   title  = {{DGX Spark benchmarks: open-weight models as autonomous coding agents on 128 GB unified memory}},
   year   = {2026},
-  note   = {Dataset, version 0.2.0},
+  note   = {Dataset, version 0.3.0},
   publisher = {Zenodo},
-  doi    = {10.5281/zenodo.23526143},
-  url    = {https://doi.org/10.5281/zenodo.23526143}
+  doi    = {10.5281/zenodo.23539595},
+  url    = {https://doi.org/10.5281/zenodo.23539595}
 }
 ```
 
