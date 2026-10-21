@@ -13,7 +13,7 @@ Added automatically as runs finish: see the commit history and [RESULTS.md](RESU
 
 ## 0.1.0 (2026-10-21)
 
-First public version.
+First public version. DOI: [10.5281/zenodo.23524591](https://doi.org/10.5281/zenodo.23524591).
 - **Models:**
   - Qwen3.8-27B (vLLM, NVFP4 + MTP)
   - Qwen3.8-Flash-Next (llama.cpp, 3-bit UD-Q3_K_XL)

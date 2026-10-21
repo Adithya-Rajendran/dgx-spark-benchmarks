@@ -1,5 +1,7 @@
 # DGX Spark benchmarks: local coding agents
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23524590.svg)](https://doi.org/10.5281/zenodo.23524590)
+
 Measured results for open-weight models running as **autonomous coding agents** on one ASUS Ascent GX10
 (NVIDIA GB10, 128 GB unified memory; the same class as the DGX Spark and the RTX Spark laptops). Each agent
 is Claude Code pointed at a local model server, running in an isolated microVM whose only network
@@ -44,8 +46,10 @@ is GPU-only. See [METHOD.md](METHOD.md#7-threats-to-validity).
 
 ## How to cite
 
-Cite a tagged release so your numbers stay reproducible; `main` keeps changing as models are added. GitHub's
-"Cite this repository" button gives APA and BibTeX from [CITATION.cff](CITATION.cff). For example:
+Cite a versioned release so your numbers stay reproducible; `main` keeps changing as models are added. Each
+release is archived on Zenodo with its own DOI. [10.5281/zenodo.23524590](https://doi.org/10.5281/zenodo.23524590)
+always resolves to the latest; v0.1.0 is [10.5281/zenodo.23524591](https://doi.org/10.5281/zenodo.23524591).
+GitHub's "Cite this repository" button gives APA and BibTeX from [CITATION.cff](CITATION.cff). For example:
 
 ```bibtex
 @misc{rajendran_dgx_spark_benchmarks,
@@ -53,7 +57,9 @@ Cite a tagged release so your numbers stay reproducible; `main` keeps changing a
   title  = {{DGX Spark benchmarks: open-weight models as autonomous coding agents on 128 GB unified memory}},
   year   = {2026},
   note   = {Dataset, version 0.1.0},
-  url    = {https://github.com/Adithya-Rajendran/dgx-spark-benchmarks}
+  publisher = {Zenodo},
+  doi    = {10.5281/zenodo.23524591},
+  url    = {https://doi.org/10.5281/zenodo.23524591}
 }
 ```
 

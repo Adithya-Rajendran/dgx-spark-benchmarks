@@ -4,6 +4,14 @@ type: dataset
 title: "DGX Spark benchmarks: open-weight models as autonomous coding agents on 128 GB unified memory"
 version: 0.1.0
 date-released: 2026-10-21
+doi: 10.5281/zenodo.23524590
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23524590
+    description: "Concept DOI: always resolves to the latest version"
+  - type: doi
+    value: 10.5281/zenodo.23524591
+    description: "Version 0.1.0"
 authors:
   - family-names: Rajendran
     given-names: Adithya
