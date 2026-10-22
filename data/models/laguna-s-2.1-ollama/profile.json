@@ -1,0 +1,17 @@
+{
+ "model": "laguna-s-2.1-ollama",
+ "engine": "ollama",
+ "tier": "128GB",
+ "image": "ollama/ollama:0.40.5",
+ "image_id": "sha256:bbe182f79f8a7b4adde94b416c8ba4f61fdb1ce7eef658e6d1856388b623088c",
+ "args": null,
+ "weights_gb": 73.4,
+ "load_s": 59.6,
+ "headroom_before_gib": 118.15,
+ "headroom_loaded_gib": 40.85,
+ "kv_cache_gib": null,
+ "kv_cache_tokens": null,
+ "max_concurrency": null,
+ "model_load_gib": null,
+ "started_at": "2026-10-22T10:37:08Z"
+}

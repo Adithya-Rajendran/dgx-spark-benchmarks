@@ -1,0 +1,17 @@
+{
+ "model": "laguna-s-2.1-lcpp",
+ "engine": "llama.cpp",
+ "tier": "128GB",
+ "image": "ghcr.io/ggml-org/llama.cpp:server-cuda",
+ "image_id": "sha256:801010e1816fce3be4f30a8c29ec2760b8651e1dc767ed99b5c5d5b104e78caf",
+ "args": "-m /weights/model/UD-Q4_K_XL/Laguna-S-2.1-UD-Q4_K_XL-00001-of-00003.gguf --alias laguna-s-2.1-lcpp -c 131072 -np 1 -b 4096 -ub 1024 -ngl 99 -fa on --jinja --reasoning-format auto --cache-ram 0 --temp 1.0 --top-p 1.0 --top-k 20 --min-p 0 --repeat-penalty 1.0 --presence-penalty 0",
+ "weights_gb": 73.4,
+ "load_s": 75.5,
+ "headroom_before_gib": 118.05,
+ "headroom_loaded_gib": 41.06,
+ "kv_cache_gib": null,
+ "kv_cache_tokens": null,
+ "max_concurrency": null,
+ "model_load_gib": null,
+ "started_at": "2026-10-22T07:53:04Z"
+}

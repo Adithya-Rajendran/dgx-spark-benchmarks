@@ -1,0 +1,67 @@
+{
+  "model": "laguna-s-2.1-ollama",
+  "backend": "vllm",
+  "base_url": "http://127.0.0.1:11434/v1",
+  "scenario": "16384x64",
+  "input_tokens_target": 16384,
+  "max_tokens": 64,
+  "ts_start_unix": 1792665636,
+  "complete": true,
+  "levels": [
+    {
+      "concurrency": 1,
+      "requests": 4,
+      "ok": 4,
+      "errors": 0,
+      "wall_s": 73.903,
+      "agg_output_tok_s": 3.46,
+      "agg_total_tok_s": 947.94,
+      "req_per_s": 0.054,
+      "ttft_s": {
+        "p50": 18.4028,
+        "p90": 18.4847,
+        "p99": 18.489,
+        "mean": 18.332,
+        "min": 18.0328,
+        "max": 18.4895
+      },
+      "e2e_s": {
+        "p50": 18.4756,
+        "p90": 18.4862,
+        "p99": 18.4896,
+        "mean": 18.4756,
+        "min": 18.4613,
+        "max": 18.49
+      },
+      "itl_ms": {
+        "p50": 1.1566,
+        "p90": 5.4524,
+        "p99": 6.6661,
+        "mean": 2.2797,
+        "min": 0.0046,
+        "max": 6.801
+      },
+      "out_tokens_mean": 64,
+      "prompt_tokens_mean": 17449.8,
+      "telemetry": {
+        "n_samples": 137,
+        "gpu_util_pct": {
+          "mean": 94.85,
+          "max": 96.0
+        },
+        "gpu_temp_c": {
+          "max": 86.0
+        },
+        "gpu_power_w": {
+          "mean": 79.82,
+          "max": 88.11
+        },
+        "mem_used_gb": {
+          "mean": 85.45,
+          "max": 87.04
+        }
+      },
+      "first_error": null
+    }
+  ]
+}
