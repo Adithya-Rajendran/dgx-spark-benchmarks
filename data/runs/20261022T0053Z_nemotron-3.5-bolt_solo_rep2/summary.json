@@ -1,0 +1,15 @@
+{
+ "run_id": "20261022T0053Z_nemotron-3.5-bolt_solo_rep2",
+ "model": "nemotron-3.5-bolt",
+ "arm": "solo",
+ "tasks": 6,
+ "resolved": 5,
+ "ended_at": "2026-10-22T02:40:01Z",
+ "median_wall_s": 944.7,
+ "energy_wh": 130.69,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {
+  "timeout": 1
+ }
+}
