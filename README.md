@@ -29,7 +29,7 @@ Fresh-PR = 18 real Python bug fixes merged after 2026-09-01, graded with hidden 
 
 | Model | Engine | Fresh-PR solo | Median min/task | GPU Wh (18 tasks) | SWE-bench Pro | Decode tok/s | 16k-prompt request (s) |
 |---|---|---|---|---|---|---|---|
-| nemotron-3.5-bolt | vllm | 8/18 | 12.6 | 404 | – | 60.7 | 10.2 |
+| nemotron-3.5-bolt | vllm | 8/18 | 12.6 | 404 | 2/11 (3 errored) | 60.7 | 10.2 |
 | ornith-1.5-35b | vllm | 10/18 | 10.3 | 160 | 5/11 (2 errored) | 91.1 | 4.5 |
 | qwen3.8-27b | vllm | 12/18 | 18.7 | 252 | 6/11 (4 errored) | 23.8 | 9.4 |
 | qwen3.8-flash-next-iq4 | llama.cpp | 13/18 | 8.7 | 140 | 7/11 | 32.9 | 23.0 |

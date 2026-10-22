@@ -1,0 +1,58 @@
+{
+    "id": "4386297e-ce87-41e1-95d9-17ec1e13b9c0",
+    "started_at": "2026-10-21T19:40:06.709451",
+    "updated_at": "2026-10-22T00:52:06.248606",
+    "finished_at": "2026-10-22T00:52:06.248606",
+    "n_total_trials": 11,
+    "stats": {
+        "n_completed_trials": 11,
+        "n_errored_trials": 3,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "claude-code__nemotron-3.5-bolt__half_a": {
+                "n_trials": 10,
+                "n_errors": 3,
+                "metrics": [
+                    {
+                        "mean": 0.18181818181818182
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "instance_ansible__ansible-deb54e__CYjM4tQ",
+                            "instance_element-hq__element-web__GoPWdDQ",
+                            "instance_flipt-io__flipt-756f00f__nrsAMoy",
+                            "instance_future-architect__vuls__ugCdDJo",
+                            "instance_internetarchive__openli__NPVCjFN",
+                            "instance_nodebb__nodebb-04998908__tWqijoY",
+                            "instance_protonmail__webclients__T5nmzcS",
+                            "instance_tutao__tutanota-09c2776__oMmo4H4"
+                        ],
+                        "1.0": [
+                            "instance_gravitational__teleport__muGbQfg",
+                            "instance_navidrome__navidrome-6b__8RYeqHo"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "instance_gravitational__teleport__muGbQfg",
+                        "instance_nodebb__nodebb-04998908__tWqijoY"
+                    ],
+                    "NetworkConnectionError": [
+                        "instance_qutebrowser__qutebrowse__mzAWyK8"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 45053158,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 513957,
+        "cost_usd": 245.04870500000004
+    }
+}
