@@ -1,0 +1,17 @@
+{
+ "model": "qwen3.8-flash-next-nvfp4-mtp",
+ "engine": "vllm",
+ "tier": "128GB",
+ "image": "vllm/vllm-openai:nightly-77154ca6116ae34cbfe314beef1016bde9b63989",
+ "image_id": "sha256:bc7762f87a5ed857f4793af3ac2a7d3fd0eb76a128365bdd78905325591cca68",
+ "args": "--served-model-name qwen3.8-flash-next-nvfp4-mtp --host 127.0.0.1 --port 9133 --max-model-len 131072 --quantization modelopt --language-model-only --engram-config '{\"disk_offload\":true}' --kv-cache-dtype fp8_e4m3 --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --no-enable-prefix-caching --max-num-seqs 4 --max-num-batched-tokens 4096 --gpu-memory-utilization 0.72 --no-enable-flashinfer-autotune --chat-template /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_xml",
+ "weights_gb": 132.7,
+ "load_s": 767.4,
+ "headroom_before_gib": 118.25,
+ "headroom_loaded_gib": 20.71,
+ "kv_cache_gib": "9.78",
+ "kv_cache_tokens": "524,288",
+ "max_concurrency": "131,072 tokens per request: 4.00x",
+ "model_load_gib": "75.9",
+ "started_at": "2026-10-23T18:56:28Z"
+}

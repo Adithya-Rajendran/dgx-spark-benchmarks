@@ -1,0 +1,95 @@
+{
+ "variant": "qwen3.8-flash-next-nvfp4-pc",
+ "args": "--served-model-name qwen3.8-flash-next-nvfp4-pc --host 127.0.0.1 --port 9133 --max-model-len 131072 --quantization modelopt --language-model-only --engram-config '{\"disk_offload\":true}' --kv-cache-dtype fp8_e4m3 --enable-prefix-caching --max-num-seqs 4 --max-num-batched-tokens 4096 --gpu-memory-utilization 0.72 --no-enable-flashinfer-autotune --chat-template /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_xml",
+ "env": {
+  "VLLM_USE_DEEP_GEMM": "0",
+  "VLLM_USE_V2_MODEL_RUNNER": "1",
+  "CUTE_DSL_ARCH": "sm_121a"
+ },
+ "overlay_files": 4,
+ "profile": {
+  "load_s": 692.5,
+  "headroom_loaded_gib": 20.71,
+  "kv_cache_gib": "13.25",
+  "kv_cache_tokens": "891,803",
+  "max_concurrency": "131,072 tokens per request: 6.80x",
+  "model_load_gib": "73.24",
+  "image_id": "sha256:bc7762f87a5ed857f4793af3ac2a7d3fd0eb76a128365bdd78905325591cca68"
+ },
+ "decode": {
+  "tok_s": 22.15,
+  "s_per_req": 46.23,
+  "errors": 0
+ },
+ "p16k": {
+  "tok_s": 6.95,
+  "s_per_req": 9.2,
+  "errors": 0
+ },
+ "p64k": {
+  "tok_s": 2.24,
+  "s_per_req": 28.62,
+  "errors": 0
+ },
+ "natural": {
+  "tok_s": 22.3,
+  "mtp_acceptance": null
+ },
+ "reuse": {
+  "ttft_16k_s": 5.63,
+  "ttft_16k_repeat_s": 0.39
+ },
+ "correctness": {
+  "passes": [
+   {
+    "pass": "cold",
+    "correct": 3,
+    "of": 3,
+    "answers": [
+     "\n\n1791",
+     "\n\n2486",
+     "\n\n5744"
+    ],
+    "acceptance": null,
+    "prefix_hit_tokens": 25088.0
+   },
+   {
+    "pass": "cached",
+    "correct": 3,
+    "of": 3,
+    "answers": [
+     "\n\n1791",
+     "\n\n2486",
+     "\n\n5744"
+    ],
+    "acceptance": null,
+    "prefix_hit_tokens": 37632.0
+   }
+  ],
+  "ok": true
+ },
+ "agent": {
+  "resolved": true,
+  "failure_class": null,
+  "status": "success",
+  "wall_s": 220.2,
+  "turns": 14,
+  "min_headroom_gib": 19.19,
+  "malformed_tool_calls": 0,
+  "energy_wh": 2.272
+ },
+ "verdict": {
+  "pass": false,
+  "ratios_vs_baseline": {
+   "decode": 0.67,
+   "p16k": 2.5,
+   "p64k": 3.25
+  },
+  "why": [
+   "slower than the baseline on at least one test (ratios vs baseline: {'decode': 0.67, 'p16k': 2.5, 'p64k': 3.25})",
+   "free memory fell to 19.19 GiB during the agent task (< 24)",
+   "agent task took 220.2 s vs 114.4 s on the baseline (> 1.5x)"
+  ],
+  "finicky": "4 files from an unmerged vLLM PR (#59958) mounted over a nightly image"
+ }
+}

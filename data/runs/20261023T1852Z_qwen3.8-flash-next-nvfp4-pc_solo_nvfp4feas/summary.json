@@ -1,0 +1,13 @@
+{
+ "run_id": "20261023T1852Z_qwen3.8-flash-next-nvfp4-pc_solo_nvfp4feas",
+ "model": "qwen3.8-flash-next-nvfp4-pc",
+ "arm": "solo",
+ "tasks": 1,
+ "resolved": 1,
+ "ended_at": "2026-10-23T18:56:23Z",
+ "median_wall_s": 220.2,
+ "energy_wh": 2.27,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {}
+}

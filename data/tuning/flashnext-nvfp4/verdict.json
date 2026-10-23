@@ -1,0 +1,53 @@
+{
+ "baseline": {
+  "model": "qwen3.8-flash-next-iq4",
+  "decode_tok_s": 32.92,
+  "p16k_s": 22.96425,
+  "p64k_s": 92.906,
+  "agent_wall_s": 114.4,
+  "agent_resolved": true
+ },
+ "variants": {
+  "qwen3.8-flash-next-nvfp4-mtp-pc": {
+   "pass": false,
+   "ratios_vs_baseline": {
+    "decode": 0.99,
+    "p16k": 2.85,
+    "p64k": 3.34
+   },
+   "why": [
+    "free memory fell to 23.52 GiB during the agent task (< 24)"
+   ],
+   "finicky": "4 files from an unmerged vLLM PR (#59958) mounted over a nightly image"
+  },
+  "qwen3.8-flash-next-nvfp4-pc": {
+   "pass": false,
+   "ratios_vs_baseline": {
+    "decode": 0.67,
+    "p16k": 2.5,
+    "p64k": 3.25
+   },
+   "why": [
+    "slower than the baseline on at least one test (ratios vs baseline: {'decode': 0.67, 'p16k': 2.5, 'p64k': 3.25})",
+    "free memory fell to 19.19 GiB during the agent task (< 24)",
+    "agent task took 220.2 s vs 114.4 s on the baseline (> 1.5x)"
+   ],
+   "finicky": "4 files from an unmerged vLLM PR (#59958) mounted over a nightly image"
+  },
+  "qwen3.8-flash-next-nvfp4-mtp": {
+   "pass": false,
+   "ratios_vs_baseline": {
+    "decode": 0.93,
+    "p16k": 2.84,
+    "p64k": 3.35
+   },
+   "why": [
+    "slower than the baseline on at least one test (ratios vs baseline: {'decode': 0.93, 'p16k': 2.84, 'p64k': 3.35})",
+    "agent task did not complete: {'resolved': None, 'failure_class': 'harness_error', 'status': None, 'wall_s': None, 'turns': None, 'min_headroom_gib': 19.7, 'malformed_tool_calls': None, 'energy_wh': 0.052}",
+    "free memory fell to 19.7 GiB during the agent task (< 24)"
+   ],
+   "finicky": "4 files from an unmerged vLLM PR (#59958) mounted over a nightly image"
+  }
+ },
+ "any_pass": []
+}

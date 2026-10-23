@@ -1,0 +1,93 @@
+{
+ "variant": "qwen3.8-flash-next-nvfp4-mtp-pc",
+ "args": "--served-model-name qwen3.8-flash-next-nvfp4-mtp-pc --host 127.0.0.1 --port 9133 --max-model-len 131072 --quantization modelopt --language-model-only --engram-config '{\"disk_offload\":true}' --kv-cache-dtype fp8_e4m3 --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --enable-prefix-caching --max-num-seqs 4 --max-num-batched-tokens 4096 --gpu-memory-utilization 0.72 --no-enable-flashinfer-autotune --chat-template /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_xml",
+ "env": {
+  "VLLM_USE_DEEP_GEMM": "0",
+  "VLLM_USE_V2_MODEL_RUNNER": "1",
+  "CUTE_DSL_ARCH": "sm_121a"
+ },
+ "overlay_files": 4,
+ "profile": {
+  "load_s": 702.2,
+  "headroom_loaded_gib": 25.59,
+  "kv_cache_gib": "10.61",
+  "kv_cache_tokens": "530,630",
+  "max_concurrency": "131,072 tokens per request: 4.05x",
+  "model_load_gib": "75.9",
+  "image_id": "sha256:bc7762f87a5ed857f4793af3ac2a7d3fd0eb76a128365bdd78905325591cca68"
+ },
+ "decode": {
+  "tok_s": 32.56,
+  "s_per_req": 31.45,
+  "errors": 0
+ },
+ "p16k": {
+  "tok_s": 7.95,
+  "s_per_req": 8.05,
+  "errors": 0
+ },
+ "p64k": {
+  "tok_s": 2.3,
+  "s_per_req": 27.82,
+  "errors": 0
+ },
+ "natural": {
+  "tok_s": 27.9,
+  "mtp_acceptance": 0.377
+ },
+ "reuse": {
+  "ttft_16k_s": 5.68,
+  "ttft_16k_repeat_s": 1.32
+ },
+ "correctness": {
+  "passes": [
+   {
+    "pass": "cold",
+    "correct": 3,
+    "of": 3,
+    "answers": [
+     "\n\n1791",
+     "\n\n2486",
+     "\n\n5744"
+    ],
+    "acceptance": 0.663,
+    "prefix_hit_tokens": 19200.0
+   },
+   {
+    "pass": "cached",
+    "correct": 3,
+    "of": 3,
+    "answers": [
+     "\n\n1791",
+     "\n\n2486",
+     "\n\n5744"
+    ],
+    "acceptance": 0.697,
+    "prefix_hit_tokens": 28800.0
+   }
+  ],
+  "ok": true
+ },
+ "agent": {
+  "resolved": true,
+  "failure_class": null,
+  "status": "success",
+  "wall_s": 118.2,
+  "turns": 11,
+  "min_headroom_gib": 23.52,
+  "malformed_tool_calls": 0,
+  "energy_wh": 1.657
+ },
+ "verdict": {
+  "pass": false,
+  "ratios_vs_baseline": {
+   "decode": 0.99,
+   "p16k": 2.85,
+   "p64k": 3.34
+  },
+  "why": [
+   "free memory fell to 23.52 GiB during the agent task (< 24)"
+  ],
+  "finicky": "4 files from an unmerged vLLM PR (#59958) mounted over a nightly image"
+ }
+}

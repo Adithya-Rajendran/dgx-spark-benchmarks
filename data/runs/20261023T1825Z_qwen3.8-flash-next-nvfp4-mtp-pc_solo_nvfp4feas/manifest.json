@@ -1,0 +1,64 @@
+{
+ "run_id": "20261023T1825Z_qwen3.8-flash-next-nvfp4-mtp-pc_solo_nvfp4feas",
+ "model": "qwen3.8-flash-next-nvfp4-mtp-pc",
+ "arm": "solo",
+ "tag": "nvfp4feas",
+ "started_at": "2026-10-23T18:25:08Z",
+ "model_config": {
+  "tier": "128GB",
+  "engine": "vllm",
+  "image": "vllm/vllm-openai:nightly-77154ca6116ae34cbfe314beef1016bde9b63989",
+  "weights": "local/qwen3.8-flash-next-nvfp4",
+  "port": 9133,
+  "sbx_memory": "4g",
+  "effort": "medium",
+  "env": {
+   "VLLM_USE_DEEP_GEMM": "0",
+   "VLLM_USE_V2_MODEL_RUNNER": "1",
+   "CUTE_DSL_ARCH": "sm_121a"
+  },
+  "extra_mounts": [
+   "@bench/patches/vllm-pr59958/config__engram.py:/usr/local/lib/python3.12/dist-packages/vllm/config/engram.py",
+   "@bench/patches/vllm-pr59958/models__qwen4_exp__common__ngram_embedding.py:/usr/local/lib/python3.12/dist-packages/vllm/models/qwen4_exp/common/ngram_embedding.py",
+   "@bench/patches/vllm-pr59958/models__qwen4_exp__nvidia__model_state.py:/usr/local/lib/python3.12/dist-packages/vllm/models/qwen4_exp/nvidia/model_state.py",
+   "@bench/patches/vllm-pr59958/models__qwen4_exp__nvidia__ngram_embedding.py:/usr/local/lib/python3.12/dist-packages/vllm/models/qwen4_exp/nvidia/ngram_embedding.py"
+  ],
+  "args": "--served-model-name qwen3.8-flash-next-nvfp4-mtp-pc --host 127.0.0.1 --port 9133 --max-model-len 131072 --quantization modelopt --language-model-only --engram-config '{\"disk_offload\":true}' --kv-cache-dtype fp8_e4m3 --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --enable-prefix-caching --max-num-seqs 4 --max-num-batched-tokens 4096 --gpu-memory-utilization 0.72 --no-enable-flashinfer-autotune --chat-template /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_xml"
+ },
+ "server_profile": {
+  "model": "qwen3.8-flash-next-nvfp4-mtp-pc",
+  "engine": "vllm",
+  "tier": "128GB",
+  "image": "vllm/vllm-openai:nightly-77154ca6116ae34cbfe314beef1016bde9b63989",
+  "image_id": "sha256:bc7762f87a5ed857f4793af3ac2a7d3fd0eb76a128365bdd78905325591cca68",
+  "args": "--served-model-name qwen3.8-flash-next-nvfp4-mtp-pc --host 127.0.0.1 --port 9133 --max-model-len 131072 --quantization modelopt --language-model-only --engram-config '{\"disk_offload\":true}' --kv-cache-dtype fp8_e4m3 --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3}' --enable-prefix-caching --max-num-seqs 4 --max-num-batched-tokens 4096 --gpu-memory-utilization 0.72 --no-enable-flashinfer-autotune --chat-template /templates/qwen3.8-flash-next-inline-system.jinja --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_xml",
+  "weights_gb": 132.7,
+  "load_s": 702.2,
+  "headroom_before_gib": 117.94,
+  "headroom_loaded_gib": 25.59,
+  "kv_cache_gib": "10.61",
+  "kv_cache_tokens": "530,630",
+  "max_concurrency": "131,072 tokens per request: 4.05x",
+  "model_load_gib": "75.9",
+  "started_at": "2026-10-23T18:03:04Z"
+ },
+ "config": {
+  "tasks": [
+   "more-itertools__more-itertools-1278"
+  ],
+  "parallel": 1,
+  "timeout_min": 45,
+  "max_turns": 100,
+  "attempt": 1,
+  "guide": null
+ },
+ "versions": {
+  "sbx": "sbx version v0.48.0 5caf923e0587d376848f6f388eca3e0f5ca00e2d",
+  "claude_host": "2.1.305 (Claude Code)",
+  "host": "gx10",
+  "kernel": "7.0.0-1019-nvidia",
+  "repo_commit": "3a141de4edf351a84901ed561155e1c0a6e3858f",
+  "grader_image": "sha256:d8f1067384e385a28e9282e3d22afd9a4e330ed559c6deb5d974efb2adf304c1"
+ },
+ "planner_model": "claude-opus-5-5"
+}
