@@ -12,6 +12,8 @@ Cite a tagged release (or its DOI) so your numbers stay reproducible. `main` cha
 Added automatically as runs finish: see the commit history and [RESULTS.md](RESULTS.md).
 
 - Flash-Next deep dive updated with the 4-bit results.
+- SWE-bench Pro reruns of infrastructure errors are merged into the full run (see DATA.md). First use: Laguna's
+  vuls task, whose image pull timed out on Docker Hub before the agent started.
 
 ## 0.3.0 (2026-10-21)
 

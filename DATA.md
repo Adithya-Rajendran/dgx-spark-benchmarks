@@ -98,6 +98,11 @@ Empty cells mean the source did not report that value at that moment.
 | `manifest.json`, `subset.json` | Model, port and Claude Code version; the exact task subset |
 | `telemetry.csv` | As above |
 
+**Reruns.** A task that errored before the agent ran (an infrastructure failure, such as a Docker Hub timeout while
+pulling the task image) may be rerun later. The rerun is stored as its own run, `<UTC>_<model>_rerun-<name>`, and
+RESULTS.md / `model_summary.csv` count its result in place of the errored row. Only errored rows are replaced; a task
+the agent attempted is never rerun. The full run's own `trials.jsonl` stays exactly as recorded.
+
 ## `data/speed/<model>/<model>__<engine>__<IN>x<OUT>.json`: throughput and latency
 
 Synthetic requests with unique prompts, so no prefix-cache reuse between requests. `IN`x`OUT` is input by
