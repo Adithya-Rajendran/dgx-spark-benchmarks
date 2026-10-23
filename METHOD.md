@@ -101,6 +101,31 @@ run in this order (`run_model.sh`):
 | 5 | **SWE-bench Pro** | The 11-task subset, solo | `swepro/<run>/` |
 | 6 | **Opus at its best** (two models only) | Opus calibrates on the held-out set and writes a guide for that model. Per task, Opus writes a spec, the local model codes, and Opus reviews (it can run tests in the sandbox) and may send the work back once | `runs/*_opus-best/` |
 
+Step 7, **the learning skill** (Ornith-1.5, planner Claude Sonnet 5.5 at effort high): the planner keeps its own
+notes on how to work with the model. The notes have four sections: how it behaves, how to write specs for it, how
+to review its work, and standing instructions that are installed into the model's CLAUDE.md. It reads them before
+every spec and every review.
+
+*Practice.* The planner works through up to 24 held-out tasks in a fixed, seeded order. These come from
+repositories that are not among the 18 scored tasks. After each task it writes a retrospective and updates its
+notes. The retrospective uses only what it observed during the task: the issue, its spec, the sandbox test
+output, its review, the agent's tool errors, its timing and the diff. The notes have a hard budget, enforced in code: at most 3,000 characters (about 750 tokens), with at most 600 for
+the executor section. They are loaded before every task, so every update must merge points, keep what matters
+most and drop the rest. An update that breaks a rule gets one fix pass, and is rejected if it still breaks one. The rules are: the
+size budget; the four-section structure; and generality (no repository names, file paths, file names or issue/PR
+numbers). The skill's own `scripts/notes.py` enforces them, and the same script validates and versions updates
+in everyday use.
+It never sees hidden tests or the grade,
+because in real use there are none. Every version of the notes is kept.
+
+*Scoring.* Frozen snapshots of the notes are scored on the 18 tasks with learning off:
+- the final version;
+- the empty starting version (v000);
+- the halfway version.
+
+If the notes improve with use, the scores rise across these checkpoints. The calibrate-once Opus guide (step 6)
+is the static baseline.
+
 Step 6 runs only on two models, chosen after steps 0–5: the best performer and the one most useful for
 comparison. In this arm Opus never edits code, and its tokens and time are logged separately.
 

@@ -51,7 +51,8 @@ Method and rationale: [METHOD.md](METHOD.md). Changes to the data, including cor
 | `avg_power_w`, `peak_power_w` | W | Mean and maximum GPU power over the window |
 | `min_headroom_gib` | GiB | Minimum true free memory over the window (definition below) |
 | `retries`, `status_retry` | int, str | opus-best only: 1 if Opus sent the work back once, and the second session's status |
-| `opus_*` | tokens, s | opus-best only: Opus's own tokens and time, kept separate from the local model's |
+| `opus_*` | tokens, s | opus-best only: the **planner's** tokens and time, kept separate from the local model's. The planner is Opus unless the run's `manifest.json` says otherwise (`planner_model`, `planner_effort`; e.g. runs tagged `sonnet55-high` use Claude Sonnet 5.5 at effort high) |
+| `skill_change`, `retro_*` | str, tokens, s | Learning-skill practice runs only: the planner's one-line summary of how it changed its notes after this task, and the retrospective's tokens and time |
 | `recovered` | str | Present only on rows re-fetched after an infrastructure fault. The agent session itself was unchanged; see CHANGELOG |
 | `error`, `grade_error` | str | Harness exception text (`failure_class` = `harness_error`) |
 

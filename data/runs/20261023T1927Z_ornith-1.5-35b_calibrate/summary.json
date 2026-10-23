@@ -1,0 +1,15 @@
+{
+ "run_id": "20261023T1927Z_ornith-1.5-35b_calibrate",
+ "model": "ornith-1.5-35b",
+ "arm": "calibrate",
+ "tasks": 6,
+ "resolved": 2,
+ "ended_at": "2026-10-23T20:11:31Z",
+ "median_wall_s": 508.0,
+ "energy_wh": 24.06,
+ "opus_input_tokens": 1949799,
+ "opus_output_tokens": 23855,
+ "failure_classes": {
+  "wrong_fix_and_broke_existing": 4
+ }
+}
