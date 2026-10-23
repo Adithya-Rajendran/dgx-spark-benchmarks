@@ -32,6 +32,7 @@ Fresh-PR = 18 real Python bug fixes merged after 2026-09-01, graded with hidden 
 | laguna-s-2.1-ollama | ollama | 13/18 | 12.1 | 224 | 4/11 (3 errored) | 30.7 | 18.5 |
 | nemotron-3.5-bolt | vllm | 8/18 | 12.6 | 404 | 2/11 (3 errored) | 60.7 | 10.2 |
 | ornith-1.5-35b | vllm | 10/18 | 10.3 | 160 | 5/11 (2 errored) | 91.1 | 4.5 |
+| qwen3.6-35b | vllm | 8/18 | 4.3 | 81 | – | 95.3 | 4.5 |
 | qwen3.8-27b | vllm | 12/18 | 18.7 | 252 | 6/11 (4 errored) | 23.8 | 9.4 |
 | qwen3.8-flash-next-iq4 | llama.cpp | 13/18 | 8.7 | 140 | 7/11 | 32.9 | 23.0 |
 | qwen3.8-flash-next-lcpp | llama.cpp | 11/18 | 10.6 | 194 | 6/11 (2 errored) | 31.1 | 21.7 |

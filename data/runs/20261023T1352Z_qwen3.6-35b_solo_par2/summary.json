@@ -1,0 +1,16 @@
+{
+ "run_id": "20261023T1352Z_qwen3.6-35b_solo_par2",
+ "model": "qwen3.6-35b",
+ "arm": "solo",
+ "tasks": 6,
+ "resolved": 3,
+ "ended_at": "2026-10-23T14:12:46Z",
+ "median_wall_s": 344.0,
+ "energy_wh": 32.25,
+ "opus_input_tokens": 0,
+ "opus_output_tokens": 0,
+ "failure_classes": {
+  "broke_existing": 1,
+  "wrong_fix": 2
+ }
+}
