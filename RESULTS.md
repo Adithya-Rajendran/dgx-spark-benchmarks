@@ -103,3 +103,4 @@ Kept on the raw-data share for transparency; reasons are in the run name and in 
 - `20261019T1629Z_qwen3.8-27b_solo_par2_INVALID-sandboxes-removed`
 - `20261019T2032Z_qwen3.8-27b_INVALID-internet-open`
 - `20261020T0539Z_qwen3.8-flash-next-lcpp_solo_INVALID-server-killed`
+- `20261023T0048Z_laguna-s-2.1-ollama_rerun-vuls_ABORTED-by-user`
