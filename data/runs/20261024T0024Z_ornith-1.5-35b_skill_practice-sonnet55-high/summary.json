@@ -1,0 +1,17 @@
+{
+ "run_id": "20261024T0024Z_ornith-1.5-35b_skill_practice-sonnet55-high",
+ "model": "ornith-1.5-35b",
+ "arm": "skill",
+ "tasks": 24,
+ "resolved": 11,
+ "ended_at": "2026-10-24T04:47:05Z",
+ "median_wall_s": 345.1,
+ "energy_wh": 146.37,
+ "opus_input_tokens": 7909974,
+ "opus_output_tokens": 175389,
+ "failure_classes": {
+  "partial_fix": 3,
+  "wrong_fix": 3,
+  "wrong_fix_and_broke_existing": 7
+ }
+}
