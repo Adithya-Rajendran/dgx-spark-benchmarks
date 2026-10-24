@@ -23,7 +23,7 @@ result.
 
 This repository updates automatically after each model finishes. More models are in progress.
 
-## Summary (updated 2026-10-23)
+## Summary (updated 2026-10-24)
 
 Fresh-PR = 18 real Python bug fixes merged after 2026-09-01, graded with hidden tests. SWE-bench Pro = 11-task subset (one per repository). Decode = single stream, 1024 output tokens.
 
