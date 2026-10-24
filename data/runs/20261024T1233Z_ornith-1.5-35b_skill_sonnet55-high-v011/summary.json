@@ -1,0 +1,18 @@
+{
+ "run_id": "20261024T1233Z_ornith-1.5-35b_skill_sonnet55-high-v011",
+ "model": "ornith-1.5-35b",
+ "arm": "skill",
+ "tasks": 18,
+ "resolved": 12,
+ "ended_at": "2026-10-24T15:09:27Z",
+ "median_wall_s": 397.1,
+ "energy_wh": 90.55,
+ "opus_input_tokens": 5004882,
+ "opus_output_tokens": 122415,
+ "failure_classes": {
+  "broke_existing": 1,
+  "max_turns": 1,
+  "partial_fix": 3,
+  "wrong_fix": 1
+ }
+}
