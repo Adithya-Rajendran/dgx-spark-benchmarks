@@ -1,0 +1,17 @@
+{
+ "run_id": "20261024T2221Z_ornith-1.5-35b_skill_eval2-evidence-v2-v002-part2",
+ "model": "ornith-1.5-35b",
+ "arm": "skill",
+ "tasks": 14,
+ "resolved": 5,
+ "ended_at": "2026-10-25T03:36:31Z",
+ "median_wall_s": 480.5,
+ "energy_wh": 189.64,
+ "opus_input_tokens": 6617488,
+ "opus_output_tokens": 141161,
+ "failure_classes": {
+  "max_turns": 1,
+  "partial_fix": 7,
+  "wrong_fix": 1
+ }
+}

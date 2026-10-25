@@ -1,0 +1,75 @@
+{
+ "run_id": "20261025T0336Z_ornith-1.5-35b_solo_eval2",
+ "model": "ornith-1.5-35b",
+ "arm": "solo",
+ "tag": "eval2",
+ "started_at": "2026-10-25T03:36:31Z",
+ "model_config": {
+  "tier": "<=32GB",
+  "engine": "vllm",
+  "image": "nvcr.io/nvidia/vllm:26.09-py3",
+  "weights": "legacy/ornith-1.5-35b",
+  "port": 9111,
+  "shm_size": "16g",
+  "env": {
+   "VLLM_USE_V2_MODEL_RUNNER": "0"
+  },
+  "args": "--served-model-name ornith-1.5-35b --host 127.0.0.1 --port 9111 --max-model-len 131072 --gpu-memory-utilization 0.60 --kv-cache-memory-bytes 40000000000 --max-num-seqs 32 --quantization modelopt --moe-backend marlin --kv-cache-dtype fp8 --enable-prefix-caching --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":1,\"moe_backend\":\"triton\"}' --chat-template /templates/ornith-1.5-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only"
+ },
+ "server_profile": {
+  "model": "ornith-1.5-35b",
+  "engine": "vllm",
+  "tier": "<=32GB",
+  "image": "nvcr.io/nvidia/vllm:26.09-py3",
+  "image_id": "sha256:8ec4dbb7a3d131cd1799500e4e73cdde1e76523ae72849dc8fdb12b58ed2b846",
+  "args": "--served-model-name ornith-1.5-35b --host 127.0.0.1 --port 9111 --max-model-len 131072 --gpu-memory-utilization 0.60 --kv-cache-memory-bytes 40000000000 --max-num-seqs 32 --quantization modelopt --moe-backend marlin --kv-cache-dtype fp8 --enable-prefix-caching --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":1,\"moe_backend\":\"triton\"}' --chat-template /templates/ornith-1.5-inline-system.jinja --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --language-model-only",
+  "weights_gb": 23.5,
+  "load_s": 241.5,
+  "headroom_before_gib": 117.84,
+  "headroom_loaded_gib": 51.68,
+  "kv_cache_gib": null,
+  "kv_cache_tokens": "3,060,167",
+  "max_concurrency": "131,072 tokens per request: 23.35x",
+  "model_load_gib": "21.13",
+  "started_at": "2026-10-24T22:16:55Z"
+ },
+ "config": {
+  "tasks": [
+   "PyCQA__isort-2730",
+   "Python-Markdown__markdown-1648",
+   "Python-Markdown__markdown-1649",
+   "Python-Markdown__markdown-1669",
+   "hgrecco__pint-2422",
+   "hgrecco__pint-2458",
+   "hgrecco__pint-2459",
+   "hgrecco__pint-2486",
+   "hgrecco__pint-2487",
+   "hgrecco__pint-2488",
+   "hgrecco__pint-2490",
+   "hgrecco__pint-2491",
+   "hgrecco__pint-2499",
+   "lepture__mistune-481",
+   "pylint-dev__astroid-3348",
+   "sqlfluff__sqlfluff-8789",
+   "sqlfluff__sqlfluff-8796",
+   "sqlfluff__sqlfluff-8841"
+  ],
+  "parallel": 1,
+  "timeout_min": 45,
+  "max_turns": 100,
+  "attempt": 1,
+  "guide": null,
+  "skill_notes": null,
+  "skill_learn": null
+ },
+ "versions": {
+  "sbx": "sbx version v0.48.0 5caf923e0587d376848f6f388eca3e0f5ca00e2d",
+  "claude_host": "2.1.305 (Claude Code)",
+  "host": "gx10",
+  "kernel": "7.0.0-1019-nvidia",
+  "repo_commit": "2543209e545d32b9b2aa650e380e44354c8615f8",
+  "grader_image": "sha256:d8f1067384e385a28e9282e3d22afd9a4e330ed559c6deb5d974efb2adf304c1"
+ },
+ "planner_model": "claude-sonnet-5-5",
+ "planner_effort": "high"
+}

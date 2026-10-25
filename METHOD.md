@@ -101,6 +101,22 @@ run in this order (`run_model.sh`):
 | 5 | **SWE-bench Pro** | The 11-task subset, solo | `swepro/<run>/` |
 | 6 | **Opus at its best** (two models only) | Opus calibrates on the held-out set and writes a guide for that model. Per task, Opus writes a spec, the local model codes, and Opus reviews (it can run tests in the sandbox) and may send the work back once | `runs/*_opus-best/` |
 
+Step 8, **the evidence-built skill** (2026-10-24), replaces per-task rewriting. Step 7's checkpoints rose and
+then fell: v000 10/18, v011 12/18, v022 8/18, all at the same size. The notes were churning without evidence.
+- *Build.* `bench/skill_rebuild.py` reviews every earlier attempt by the model, grouped by task so the same task
+  can be compared across setups, with the real outcomes. It proposes rules, each citing the tasks where the rule
+  helped, hurt or would have helped, and merges them into one ledger.
+- *Gate (enforced in code).* A rule is kept only with at least 2 supporting tasks, more support than harm, and
+  either one observed "helped" or at least 3 counterfactual ones.
+- *Write.* The notes are written from the kept rules, within 3,500 characters (800 for the executor section).
+- *Harness changes for this step.* The reviewer may run up to 3 commands in the sandbox once before deciding,
+  and a VERIFY that hangs is reported to the planner as output instead of failing the task.
+- *Evaluation.* Because the build used the 18 scored tasks' outcomes, it is scored on fresh held-out tasks
+  (`tasks-eval2/`): post-cutoff PRs from repositories not used for practice. Three setups run: the rebuilt
+  notes, the model alone, and the planner with empty notes.
+- *Everyday use.* Every delegation is journaled in one line, and the notes are revised only at a review every
+  ~12 delegations (`scripts/notes.py journal`, `review-due`; SKILL.md step 7).
+
 Step 7, **the learning skill** (Ornith-1.5, planner Claude Sonnet 5.5 at effort high): the planner keeps its own
 notes on how to work with the model. The notes have four sections: how it behaves, how to write specs for it, how
 to review its work, and standing instructions that are installed into the model's CLAUDE.md. It reads them before
