@@ -8,6 +8,8 @@ is Claude Code pointed at a local model server, running in an isolated microVM w
 destination is that server. It fixes real bugs it cannot have seen in training, and hidden tests grade the
 result.
 
+- **[report/REPORT.md](report/REPORT.md)**: the study report with figures: models, speed, memory, parallel agents,
+  Flash-Next builds, and whether Claude can learn to use a local model better
 - **[METHOD.md](METHOD.md)**: question, hardware, models, task sets, protocol, metrics, threats to validity
 - **[RESULTS.md](RESULTS.md)**: per-model results, generated from `data/`
 - **[DATA.md](DATA.md)**: data dictionary: every file and field, units, how each is computed, known limits.
